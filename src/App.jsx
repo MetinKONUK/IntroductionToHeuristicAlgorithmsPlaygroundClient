@@ -1,41 +1,48 @@
-import { useState } from 'react';
-import { Grid } from '@mui/material';
-import ConfigurationsComponent from './components/ConfigurationsComponent';
+import { Routes, Route } from 'react-router-dom'
+import GeneticAlgorithmComponent from './components/HeuristicAlgorithms/GeneticAlgorithmComponent'
+import SimulatedAnnealingComponent from './components/HeuristicAlgorithms/SimulatedAnnealingComponent'
+import GreyWolfOptimizationComponent from './components/HeuristicAlgorithms/GreyWolfOptimizationComponent'
+import ParticleSwarmOptimizationComponent from './components/HeuristicAlgorithms/ParticleSwarmOptimizationComponent'
+import HarmonySearchAlgorithmComponent from './components/HeuristicAlgorithms/HarmonySearchAlgorithmComponent'
+import SidebarComponent from './components/SidebarComponent'
+import FloatingButton from './components/FloatingButton'
+import AlgorithmsReviewSlider from './components/AlgorithmsReviewSlider'
+import { useState } from 'react'
+
 function App() {
-    /*
-    {
-        "name": "",
+    const [isSidebarOpen, setSidebarOpen] = useState(false)
+    const toggleSidebar = () => {
+        setSidebarOpen(!isSidebarOpen)
     }
-    */
-    const [selectedAlgorithms, setSelectedAlgorithms] = useState([]);
 
     return (
         <>
-            {/* Main Wrapper Container*/}
-            <Grid
-                container
-                sx={{
-                    width: '100vw',
-                    height: '100vh',
-                }}
-            >
-                {/* Top Side Heuristic Algorithm Selection Component */}
-                <ConfigurationsComponent
-                    selectedAlgorithms={selectedAlgorithms}
-                    setSelectedAlgorithms={setSelectedAlgorithms}
+            {!isSidebarOpen && <FloatingButton onClick={toggleSidebar} />}
+
+            <SidebarComponent
+                open={isSidebarOpen}
+                toggleSidebar={toggleSidebar}
+            />
+            <Routes>
+                <Route path='/ga' element={<GeneticAlgorithmComponent />} />
+                <Route path='/sa' element={<SimulatedAnnealingComponent />} />
+                <Route
+                    path='/gwo'
+                    element={<GreyWolfOptimizationComponent />}
                 />
-                {/* Bottom Side Heuristic Algorithm Execution Results Component */}
-                <Grid
-                    container
-                    direction={'row'}
-                    sx={{
-                        height: '60%',
-                        backgroundColor: 'blue',
-                    }}
-                ></Grid>
-            </Grid>
+                <Route
+                    path='/pso'
+                    element={<ParticleSwarmOptimizationComponent />}
+                />
+                <Route
+                    path='/hs'
+                    element={<HarmonySearchAlgorithmComponent />}
+                />
+                <Route path='/run' element={<AlgorithmsReviewSlider />} />
+            </Routes>
         </>
-    );
+    )
 }
 
-export default App;
+export default App
+
