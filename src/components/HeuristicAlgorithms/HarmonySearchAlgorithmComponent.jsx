@@ -6,9 +6,13 @@ HMCR: Float,
 PAR: Float
 */
 
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { addAlgorithm } from '../../redux/features/algorithmSelectionSlice'
+import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import {
+    addAlgorithm,
+    updateAlgorithm,
+} from '../../redux/features/algorithmSelectionSlice'
+import { useParams } from 'react-router-dom'
 import {
     Box,
     TextField,
@@ -23,6 +27,11 @@ import {
 } from '@mui/material'
 
 const HarmonySearchAlgorithmComponent = () => {
+    const { index } = useParams()
+    const isEditMode = index !== undefined
+    const algorithmsToExecute = useSelector(
+        state => state.algorithmSelection.algorithmsToExecute
+    )
     const dispatch = useDispatch()
     const [parameters, setParameters] = useState({
         algorithmCode: 'HSA',
@@ -34,6 +43,11 @@ const HarmonySearchAlgorithmComponent = () => {
         customFile: null,
         customFileContent: null,
     })
+
+    useEffect(() => {
+        if (index !== undefined && algorithmsToExecute[index])
+            setParameters(algorithmsToExecute[index])
+    }, [index, algorithmsToExecute])
 
     const handleInputChange = event => {
         const { name, value, files } = event.target
@@ -60,8 +74,12 @@ const HarmonySearchAlgorithmComponent = () => {
         }
     }
 
-    const handleAddToExecutionList = () => {
-        dispatch(addAlgorithm(parameters))
+    const handleConfirm = () => {
+        if (isEditMode) {
+            dispatch(updateAlgorithm({ index, parameters })) // Handle update
+        } else {
+            dispatch(addAlgorithm(parameters)) // Handle add
+        }
     }
 
     return (
@@ -150,9 +168,11 @@ const HarmonySearchAlgorithmComponent = () => {
                         variant='contained'
                         color='primary'
                         sx={{ marginTop: 2 }}
-                        onClick={handleAddToExecutionList}
+                        onClick={handleConfirm}
                     >
-                        ADD TO EXECUTION LIST
+                        {isEditMode
+                            ? 'CONFIRM MODIFICATION'
+                            : 'ADD TO EXECUTION LIST'}
                     </Button>
                 </FormGroup>
             </Paper>

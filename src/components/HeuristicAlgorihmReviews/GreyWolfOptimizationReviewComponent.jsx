@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import {
     Card,
     CardContent,
@@ -76,6 +77,8 @@ const GreyWolfOptimizationReviewComponent = ({ data, index }) => {
                     REMOVE
                 </Button>
                 <Button
+                    component={Link}
+                    to={`/gwo/edit/${index}`}
                     sx={{
                         width: '45%',
                         marginX: '5%',

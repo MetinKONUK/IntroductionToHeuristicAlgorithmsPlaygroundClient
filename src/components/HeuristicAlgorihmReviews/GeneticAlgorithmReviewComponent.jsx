@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import {
     Card,
     CardContent,
@@ -28,12 +29,6 @@ const GeneticAlgorithmReviewComponent = ({ data, index }) => {
                         <ListItemText
                             primary='Population Size'
                             secondary={data.populationSize}
-                        />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText
-                            primary='Number of Generations'
-                            secondary={data.numberOfGenerations}
                         />
                     </ListItem>
                     <ListItem>
@@ -94,6 +89,8 @@ const GeneticAlgorithmReviewComponent = ({ data, index }) => {
                     REMOVE
                 </Button>
                 <Button
+                    component={Link}
+                    to={`/ga/edit/${index}`}
                     sx={{
                         width: '45%',
                         marginX: '5%',

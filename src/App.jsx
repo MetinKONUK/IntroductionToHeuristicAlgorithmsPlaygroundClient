@@ -25,19 +25,44 @@ function App() {
             />
             <Routes>
                 <Route path='/ga' element={<GeneticAlgorithmComponent />} />
+                <Route
+                    path='/ga/edit/:index'
+                    element={<GeneticAlgorithmComponent />}
+                />
+
                 <Route path='/sa' element={<SimulatedAnnealingComponent />} />
+                <Route
+                    path='/sa/edit/:index'
+                    element={<SimulatedAnnealingComponent />}
+                />
+
                 <Route
                     path='/gwo'
                     element={<GreyWolfOptimizationComponent />}
                 />
                 <Route
+                    path='/gwo/edit/:index'
+                    element={<GreyWolfOptimizationComponent />}
+                />
+
+                <Route
                     path='/pso'
                     element={<ParticleSwarmOptimizationComponent />}
                 />
                 <Route
+                    path='/pso/edit/:index'
+                    element={<ParticleSwarmOptimizationComponent />}
+                />
+
+                <Route
                     path='/hs'
                     element={<HarmonySearchAlgorithmComponent />}
                 />
+                <Route
+                    path='/hs/edit/:index'
+                    element={<HarmonySearchAlgorithmComponent />}
+                />
+
                 <Route path='/run' element={<AlgorithmsReviewSlider />} />
             </Routes>
         </>

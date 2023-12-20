@@ -5,9 +5,13 @@ Cool Down Factor: Float,
 Temperature Decrease Type: [Arithmetic, Geometric]
 */
 
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { addAlgorithm } from '../../redux/features/algorithmSelectionSlice'
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+    addAlgorithm,
+    updateAlgorithm,
+} from '../../redux/features/algorithmSelectionSlice'
+import { useParams } from 'react-router-dom'
 import {
     Box,
     TextField,
@@ -22,6 +26,11 @@ import {
 } from '@mui/material'
 
 const SimulatedAnnealingComponent = () => {
+    const { index } = useParams()
+    const isEditMode = index !== undefined
+    const algorithmsToExecute = useSelector(
+        state => state.algorithmSelection.algorithmsToExecute
+    )
     const dispatch = useDispatch()
     const [parameters, setParameters] = useState({
         algorithmCode: 'SA',
@@ -32,6 +41,11 @@ const SimulatedAnnealingComponent = () => {
         customFile: null,
         customFileContent: null,
     })
+
+    useEffect(() => {
+        if (index !== undefined && algorithmsToExecute[index])
+            setParameters(algorithmsToExecute[index])
+    }, [index, algorithmsToExecute])
 
     const handleInputChange = event => {
         const { name, value, files } = event.target
@@ -59,8 +73,12 @@ const SimulatedAnnealingComponent = () => {
         }
     }
 
-    const handleAddToExecutionList = () => {
-        dispatch(addAlgorithm({ ...parameters, algorithmCode: 'SA' }))
+    const handleConfirm = () => {
+        if (isEditMode) {
+            dispatch(updateAlgorithm({ index, parameters })) // Handle update
+        } else {
+            dispatch(addAlgorithm(parameters)) // Handle add
+        }
     }
 
     return (
@@ -143,9 +161,11 @@ const SimulatedAnnealingComponent = () => {
                         variant='contained'
                         color='primary'
                         sx={{ marginTop: 2 }}
-                        onClick={handleAddToExecutionList}
+                        onClick={handleConfirm}
                     >
-                        ADD TO EXECUTION LIST
+                        {isEditMode
+                            ? 'CONFIRM MODIFICATION'
+                            : 'ADD TO EXECUTION LIST'}
                     </Button>
                 </FormGroup>
             </Paper>
