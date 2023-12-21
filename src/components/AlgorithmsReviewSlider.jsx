@@ -1,4 +1,5 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { initializeWebSocket, closeWebSocket } from '../utils/webSocketManager'
 import Slider from 'react-slick'
 import { Box, Paper, Typography, Button } from '@mui/material'
 import GeneticAlgorithmReviewComponent from './HeuristicAlgorihmReviews/GeneticAlgorithmReviewComponent'
@@ -16,6 +17,7 @@ import MarinePredatorAlgorithmReviewComponent from './HeuristicAlgorihmReviews/M
 import MountainGazelleOptimizationReviewComponent from './HeuristicAlgorihmReviews/MountainGazelleOptimizationReviewComponent'
 
 const AlgorithmsReviewSlider = () => {
+    const dispatch = useDispatch()
     const algorithmsToExecute = useSelector(
         state => state.algorithmSelection.algorithmsToExecute
     )
@@ -26,6 +28,11 @@ const AlgorithmsReviewSlider = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
     }
+
+    const handleSendToServer = () => {
+        initializeWebSocket(dispatch, algorithmsToExecute)
+    }
+
     return (
         <Box
             sx={{
@@ -166,11 +173,9 @@ const AlgorithmsReviewSlider = () => {
                                 variant='contained'
                                 color='success'
                                 sx={{ width: '95%', marginTop: '2rem' }}
-                                onClick={() => {
-                                    /* Dispatch your async thunk here */
-                                }}
+                                onClick={handleSendToServer}
                             >
-                                Send to Backend
+                                Send To Server
                             </Button>
                         </Box>
                     </>

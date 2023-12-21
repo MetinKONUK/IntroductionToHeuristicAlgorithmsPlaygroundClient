@@ -1,3 +1,4 @@
+import React from 'react'
 import {
     Box,
     SwipeableDrawer,
@@ -24,8 +25,7 @@ import GazelleIcon from '../assets/sidebarIcons/gazelle.png'
 import GorillaIcon from '../assets/sidebarIcons/gorilla.png'
 import OrkaIcon from '../assets/sidebarIcons/orka.png'
 import VultureIcon from '../assets/sidebarIcons/vulture.png'
-
-import React from 'react'
+import ChartIcon from '../assets/sidebarIcons/chart.png'
 
 const SidebarComponent = ({ open, toggleSidebar }) => {
     const sidebarAlgorithmItems = [
@@ -181,6 +181,19 @@ const SidebarComponent = ({ open, toggleSidebar }) => {
                 />
             ),
         },
+        {
+            primaryText:
+                'Display & Inspect Execution Results of Selected Algorithms',
+            secondaryText:
+                'Display the execution results data in detailed charts',
+            to: '/results',
+            image: (
+                <img
+                    src={ChartIcon}
+                    style={{ width: '24px', height: '24px' }}
+                />
+            ),
+        },
     ]
     return (
         <SwipeableDrawer
@@ -247,7 +260,8 @@ const SidebarComponent = ({ open, toggleSidebar }) => {
                                     disablePadding
                                     sx={{
                                         justifyContent: 'center',
-                                        marginY: '0.75rem',
+                                        marginTop: '0.75rem',
+                                        marginBottom: '2rem',
                                     }}
                                 >
                                     <RouterLink

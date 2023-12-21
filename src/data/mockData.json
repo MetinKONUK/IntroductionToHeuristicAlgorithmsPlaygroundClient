@@ -1,0 +1,1231 @@
+[
+    {
+        "executionId": "feb93c9e-865e-4f48-a019-c56372b7d25f",
+        "algorithmData": {
+            "AlgorithmCode": "GA",
+            "Parameters": {
+                "populationSize": 1000,
+                "numberOfGenerations": 1000,
+                "mutationProbability": 0.5,
+                "crossoverType": "one-point",
+                "selectionType": "tournament-selection",
+                "functionType": "ackley"
+            }
+        },
+        "results": [
+            {
+                "iterationNumber": 1,
+                "iterationFitnessScore": 0.5
+            },
+            {
+                "iterationNumber": 2,
+                "iterationFitnessScore": 0.4
+            },
+            {
+                "iterationNumber": 3,
+                "iterationFitnessScore": 0.3
+            },
+            {
+                "iterationNumber": 4,
+                "iterationFitnessScore": 0.2
+            },
+            {
+                "iterationNumber": 5,
+                "iterationFitnessScore": 0.1
+            },
+            {
+                "iterationNumber": 6,
+                "iterationFitnessScore": 0.09
+            },
+            {
+                "iterationNumber": 7,
+                "iterationFitnessScore": 0.08
+            },
+            {
+                "iterationNumber": 8,
+                "iterationFitnessScore": 0.07
+            },
+            {
+                "iterationNumber": 9,
+                "iterationFitnessScore": 0.06
+            },
+            {
+                "iterationNumber": 10,
+                "iterationFitnessScore": 0.05
+            },
+            {
+                "iterationNumber": 11,
+                "iterationFitnessScore": 0.04
+            },
+            {
+                "iterationNumber": 12,
+                "iterationFitnessScore": 0.03
+            },
+            {
+                "iterationNumber": 13,
+                "iterationFitnessScore": 0.02
+            },
+            {
+                "iterationNumber": 14,
+                "iterationFitnessScore": 0.01
+            },
+            {
+                "iterationNumber": 15,
+                "iterationFitnessScore": 0.009
+            },
+            {
+                "iterationNumber": 16,
+                "iterationFitnessScore": 0.008
+            },
+            {
+                "iterationNumber": 17,
+                "iterationFitnessScore": 0.007
+            },
+            {
+                "iterationNumber": 18,
+                "iterationFitnessScore": 0.006
+            },
+            {
+                "iterationNumber": 19,
+                "iterationFitnessScore": 0.005
+            },
+            {
+                "iterationNumber": 20,
+                "iterationFitnessScore": 0.004
+            },
+            {
+                "iterationNumber": 21,
+                "iterationFitnessScore": 0.003
+            },
+            {
+                "iterationNumber": 22,
+                "iterationFitnessScore": 0.002
+            },
+            {
+                "iterationNumber": 23,
+                "iterationFitnessScore": 0.001
+            },
+            {
+                "iterationNumber": 24,
+                "iterationFitnessScore": 0.0009
+            },
+            {
+                "iterationNumber": 25,
+                "iterationFitnessScore": 0.0008
+            },
+            {
+                "iterationNumber": 26,
+                "iterationFitnessScore": 0.0007
+            },
+            {
+                "iterationNumber": 27,
+                "iterationFitnessScore": 0.0006
+            },
+            {
+                "iterationNumber": 28,
+                "iterationFitnessScore": 0.0005
+            },
+            {
+                "iterationNumber": 29,
+                "iterationFitnessScore": 0.0004
+            },
+            {
+                "iterationNumber": 30,
+                "iterationFitnessScore": 0.0003
+            },
+            {
+                "iterationNumber": 31,
+                "iterationFitnessScore": 0.0002
+            },
+            {
+                "iterationNumber": 32,
+                "iterationFitnessScore": 0.0001
+            },
+            {
+                "iterationNumber": 33,
+                "iterationFitnessScore": 0.00009
+            },
+            {
+                "iterationNumber": 34,
+                "iterationFitnessScore": 0.00008
+            },
+            {
+                "iterationNumber": 35,
+                "iterationFitnessScore": 0.00007
+            },
+            {
+                "iterationNumber": 36,
+                "iterationFitnessScore": 0.00006
+            },
+            {
+                "iterationNumber": 37,
+                "iterationFitnessScore": 0.00005
+            },
+            {
+                "iterationNumber": 38,
+                "iterationFitnessScore": 0.00004
+            },
+            {
+                "iterationNumber": 39,
+                "iterationFitnessScore": 0.00003
+            },
+            {
+                "iterationNumber": 40,
+                "iterationFitnessScore": 0.00002
+            },
+            {
+                "iterationNumber": 41,
+                "iterationFitnessScore": 0.00001
+            },
+            {
+                "iterationNumber": 42,
+                "iterationFitnessScore": 0.000009
+            },
+            {
+                "iterationNumber": 43,
+                "iterationFitnessScore": 0.000008
+            },
+            {
+                "iterationNumber": 44,
+                "iterationFitnessScore": 0.000007
+            },
+            {
+                "iterationNumber": 45,
+                "iterationFitnessScore": 0.000006
+            },
+            {
+                "iterationNumber": 46,
+                "iterationFitnessScore": 0.000005
+            },
+            {
+                "iterationNumber": 47,
+                "iterationFitnessScore": 0.000004
+            },
+            {
+                "iterationNumber": 48,
+                "iterationFitnessScore": 0.000003
+            },
+            {
+                "iterationNumber": 49,
+                "iterationFitnessScore": 0.000002
+            },
+            {
+                "iterationNumber": 50,
+                "iterationFitnessScore": 0.000001
+            },
+            {
+                "iterationNumber": 51,
+                "iterationFitnessScore": 0.0000009
+            },
+            {
+                "iterationNumber": 52,
+                "iterationFitnessScore": 0.0000008
+            },
+            {
+                "iterationNumber": 53,
+                "iterationFitnessScore": 0.0000007
+            },
+            {
+                "iterationNumber": 54,
+                "iterationFitnessScore": 0.0000006
+            },
+            {
+                "iterationNumber": 55,
+                "iterationFitnessScore": 0.0000005
+            },
+            {
+                "iterationNumber": 56,
+                "iterationFitnessScore": 0.0000004
+            },
+            {
+                "iterationNumber": 57,
+                "iterationFitnessScore": 0.0000003
+            },
+            {
+                "iterationNumber": 58,
+                "iterationFitnessScore": 0.0000002
+            },
+            {
+                "iterationNumber": 59,
+                "iterationFitnessScore": 0.0000001
+            },
+            {
+                "iterationNumber": 60,
+                "iterationFitnessScore": 0.00000009
+            },
+            {
+                "iterationNumber": 61,
+                "iterationFitnessScore": 0.00000008
+            },
+            {
+                "iterationNumber": 62,
+                "iterationFitnessScore": 0.00000007
+            },
+            {
+                "iterationNumber": 63,
+                "iterationFitnessScore": 0.00000006
+            },
+            {
+                "iterationNumber": 64,
+                "iterationFitnessScore": 0.00000005
+            },
+            {
+                "iterationNumber": 65,
+                "iterationFitnessScore": 0.00000004
+            },
+            {
+                "iterationNumber": 66,
+                "iterationFitnessScore": 0.00000003
+            },
+            {
+                "iterationNumber": 67,
+                "iterationFitnessScore": 0.00000002
+            },
+            {
+                "iterationNumber": 68,
+                "iterationFitnessScore": 0.00000001
+            },
+            {
+                "iterationNumber": 69,
+                "iterationFitnessScore": 0.000000009
+            },
+            {
+                "iterationNumber": 70,
+                "iterationFitnessScore": 0.000000008
+            },
+            {
+                "iterationNumber": 71,
+                "iterationFitnessScore": 0.000000007
+            },
+            {
+                "iterationNumber": 72,
+                "iterationFitnessScore": 0.000000006
+            },
+            {
+                "iterationNumber": 73,
+                "iterationFitnessScore": 0.000000005
+            },
+            {
+                "iterationNumber": 74,
+                "iterationFitnessScore": 0.000000004
+            },
+            {
+                "iterationNumber": 75,
+                "iterationFitnessScore": 0.000000003
+            },
+            {
+                "iterationNumber": 76,
+                "iterationFitnessScore": 0.000000002
+            },
+            {
+                "iterationNumber": 77,
+                "iterationFitnessScore": 0.000000001
+            },
+            {
+                "iterationNumber": 78,
+                "iterationFitnessScore": 0.0000000009
+            },
+            {
+                "iterationNumber": 79,
+                "iterationFitnessScore": 0.0000000008
+            },
+            {
+                "iterationNumber": 80,
+                "iterationFitnessScore": 0.0000000007
+            },
+            {
+                "iterationNumber": 81,
+                "iterationFitnessScore": 0.0000000006
+            },
+            {
+                "iterationNumber": 82,
+                "iterationFitnessScore": 0.0000000005
+            },
+            {
+                "iterationNumber": 83,
+                "iterationFitnessScore": 0.0000000004
+            },
+            {
+                "iterationNumber": 84,
+                "iterationFitnessScore": 0.0000000003
+            },
+            {
+                "iterationNumber": 85,
+                "iterationFitnessScore": 0.0000000002
+            },
+            {
+                "iterationNumber": 86,
+                "iterationFitnessScore": 0.0000000001
+            },
+            {
+                "iterationNumber": 87,
+                "iterationFitnessScore": 0.00000000009
+            },
+            {
+                "iterationNumber": 88,
+                "iterationFitnessScore": 0.00000000008
+            },
+            {
+                "iterationNumber": 89,
+                "iterationFitnessScore": 0.00000000007
+            },
+            {
+                "iterationNumber": 90,
+                "iterationFitnessScore": 0.00000000006
+            },
+            {
+                "iterationNumber": 91,
+                "iterationFitnessScore": 0.00000000005
+            },
+            {
+                "iterationNumber": 92,
+                "iterationFitnessScore": 0.00000000004
+            },
+            {
+                "iterationNumber": 93,
+                "iterationFitnessScore": 0.00000000003
+            },
+            {
+                "iterationNumber": 94,
+                "iterationFitnessScore": 0.00000000002
+            },
+            {
+                "iterationNumber": 95,
+                "iterationFitnessScore": 0.00000000001
+            },
+            {
+                "iterationNumber": 96,
+                "iterationFitnessScore": 0.000000000009
+            },
+            {
+                "iterationNumber": 97,
+                "iterationFitnessScore": 0.000000000008
+            },
+            {
+                "iterationNumber": 98,
+                "iterationFitnessScore": 0.000000000007
+            },
+            {
+                "iterationNumber": 99,
+                "iterationFitnessScore": 0.000000000006
+            },
+            {
+                "iterationNumber": 100,
+                "iterationFitnessScore": 0.000000000005
+            }
+        ]
+    },
+    {
+        "executionId": "6f8060b5-29f3-4454-89d1-54d0441698bd",
+        "algorithmData": {
+            "AlgorithmCode": "SA",
+            "Parameters": {
+                "initalTemperature": 100,
+                "coolDownFactor": 0.5,
+                "temperatureDecreaseType": "Geometric",
+                "functionType": "perm"
+            }
+        },
+        "results": [
+            [
+                { "iterationNumber": 1, "iterationFitnessScore": 3029.789 },
+                {
+                    "iterationNumber": 2,
+                    "iterationFitnessScore": 2622.3564221081165
+                },
+                {
+                    "iterationNumber": 3,
+                    "iterationFitnessScore": 2269.713569021368
+                },
+                {
+                    "iterationNumber": 4,
+                    "iterationFitnessScore": 1964.4925617160525
+                },
+                {
+                    "iterationNumber": 5,
+                    "iterationFitnessScore": 1700.3163208394099
+                },
+                {
+                    "iterationNumber": 6,
+                    "iterationFitnessScore": 1471.6653283672463
+                },
+                {
+                    "iterationNumber": 7,
+                    "iterationFitnessScore": 1273.7623065625028
+                },
+                {
+                    "iterationNumber": 8,
+                    "iterationFitnessScore": 1102.472404795656
+                },
+                {
+                    "iterationNumber": 9,
+                    "iterationFitnessScore": 954.2168087985227
+                },
+                {
+                    "iterationNumber": 10,
+                    "iterationFitnessScore": 825.8979673621888
+                },
+                {
+                    "iterationNumber": 11,
+                    "iterationFitnessScore": 714.8348742167441
+                },
+                {
+                    "iterationNumber": 12,
+                    "iterationFitnessScore": 618.7070529165981
+                },
+                {
+                    "iterationNumber": 13,
+                    "iterationFitnessScore": 535.5060743898097
+                },
+                {
+                    "iterationNumber": 14,
+                    "iterationFitnessScore": 463.4935941922107
+                },
+                {
+                    "iterationNumber": 15,
+                    "iterationFitnessScore": 401.16503272535385
+                },
+                {
+                    "iterationNumber": 16,
+                    "iterationFitnessScore": 347.21813957755603
+                },
+                {
+                    "iterationNumber": 17,
+                    "iterationFitnessScore": 300.5257851928423
+                },
+                {
+                    "iterationNumber": 18,
+                    "iterationFitnessScore": 260.11241139549134
+                },
+                {
+                    "iterationNumber": 19,
+                    "iterationFitnessScore": 225.1336487435247
+                },
+                {
+                    "iterationNumber": 20,
+                    "iterationFitnessScore": 194.85867485003575
+                },
+                {
+                    "iterationNumber": 21,
+                    "iterationFitnessScore": 168.65494507916833
+                },
+                {
+                    "iterationNumber": 22,
+                    "iterationFitnessScore": 145.9749765903331
+                },
+                {
+                    "iterationNumber": 23,
+                    "iterationFitnessScore": 126.34490960550127
+                },
+                {
+                    "iterationNumber": 24,
+                    "iterationFitnessScore": 109.3546069065059
+                },
+                {
+                    "iterationNumber": 25,
+                    "iterationFitnessScore": 94.64908470800584
+                },
+                {
+                    "iterationNumber": 26,
+                    "iterationFitnessScore": 81.92109586862131
+                },
+                {
+                    "iterationNumber": 27,
+                    "iterationFitnessScore": 70.90471047891906
+                },
+                {
+                    "iterationNumber": 28,
+                    "iterationFitnessScore": 61.369759703434816
+                },
+                {
+                    "iterationNumber": 29,
+                    "iterationFitnessScore": 53.11702679016071
+                },
+                {
+                    "iterationNumber": 30,
+                    "iterationFitnessScore": 45.97408477173387
+                },
+                {
+                    "iterationNumber": 31,
+                    "iterationFitnessScore": 39.791693894095985
+                },
+                {
+                    "iterationNumber": 32,
+                    "iterationFitnessScore": 34.440683502957775
+                },
+                {
+                    "iterationNumber": 33,
+                    "iterationFitnessScore": 29.80925324033271
+                },
+                {
+                    "iterationNumber": 34,
+                    "iterationFitnessScore": 25.80063716418327
+                },
+                {
+                    "iterationNumber": 35,
+                    "iterationFitnessScore": 22.33108198688996
+                },
+                {
+                    "iterationNumber": 36,
+                    "iterationFitnessScore": 19.328097191237976
+                },
+                {
+                    "iterationNumber": 37,
+                    "iterationFitnessScore": 16.728940463039756
+                },
+                {
+                    "iterationNumber": 38,
+                    "iterationFitnessScore": 14.479306796056305
+                },
+                {
+                    "iterationNumber": 39,
+                    "iterationFitnessScore": 12.532193880270853
+                },
+                {
+                    "iterationNumber": 40,
+                    "iterationFitnessScore": 10.84692006771175
+                },
+                {
+                    "iterationNumber": 41,
+                    "iterationFitnessScore": 9.388274397873015
+                },
+                {
+                    "iterationNumber": 42,
+                    "iterationFitnessScore": 8.125780923944049
+                },
+                {
+                    "iterationNumber": 43,
+                    "iterationFitnessScore": 7.033061969182772
+                },
+                {
+                    "iterationNumber": 44,
+                    "iterationFitnessScore": 6.087287009745828
+                },
+                {
+                    "iterationNumber": 45,
+                    "iterationFitnessScore": 5.268695669309738
+                },
+                {
+                    "iterationNumber": 46,
+                    "iterationFitnessScore": 4.560184859258389
+                },
+                {
+                    "iterationNumber": 47,
+                    "iterationFitnessScore": 3.9469514384257205
+                },
+                {
+                    "iterationNumber": 48,
+                    "iterationFitnessScore": 3.416182926370304
+                },
+                {
+                    "iterationNumber": 49,
+                    "iterationFitnessScore": 2.956789808156035
+                },
+                {
+                    "iterationNumber": 50,
+                    "iterationFitnessScore": 2.5591738375978674
+                },
+                {
+                    "iterationNumber": 51,
+                    "iterationFitnessScore": 2.2150274980587237
+                },
+                {
+                    "iterationNumber": 52,
+                    "iterationFitnessScore": 1.9171604308684078
+                },
+                {
+                    "iterationNumber": 53,
+                    "iterationFitnessScore": 1.6593492048784033
+                },
+                {
+                    "iterationNumber": 54,
+                    "iterationFitnessScore": 1.436207288340171
+                },
+                {
+                    "iterationNumber": 55,
+                    "iterationFitnessScore": 1.243072506388178
+                },
+                {
+                    "iterationNumber": 56,
+                    "iterationFitnessScore": 1.0759096327411153
+                },
+                {
+                    "iterationNumber": 57,
+                    "iterationFitnessScore": 0.9312260804388192
+                },
+                {
+                    "iterationNumber": 58,
+                    "iterationFitnessScore": 0.805998930114706
+                },
+                {
+                    "iterationNumber": 59,
+                    "iterationFitnessScore": 0.6976117711822745
+                },
+                {
+                    "iterationNumber": 60,
+                    "iterationFitnessScore": 0.6038000363385219
+                },
+                {
+                    "iterationNumber": 61,
+                    "iterationFitnessScore": 0.5226036872407405
+                },
+                {
+                    "iterationNumber": 62,
+                    "iterationFitnessScore": 0.452326262803495
+                },
+                {
+                    "iterationNumber": 63,
+                    "iterationFitnessScore": 0.39149943449887364
+                },
+                {
+                    "iterationNumber": 64,
+                    "iterationFitnessScore": 0.3388523281026561
+                },
+                {
+                    "iterationNumber": 65,
+                    "iterationFitnessScore": 0.29328497091589084
+                },
+                {
+                    "iterationNumber": 66,
+                    "iterationFitnessScore": 0.25384530968627783
+                },
+                {
+                    "iterationNumber": 67,
+                    "iterationFitnessScore": 0.21970931905747723
+                },
+                {
+                    "iterationNumber": 68,
+                    "iterationFitnessScore": 0.1901637849458745
+                },
+                {
+                    "iterationNumber": 69,
+                    "iterationFitnessScore": 0.16459140313242976
+                },
+                {
+                    "iterationNumber": 70,
+                    "iterationFitnessScore": 0.14245788172975501
+                },
+                {
+                    "iterationNumber": 71,
+                    "iterationFitnessScore": 0.12330077805218163
+                },
+                {
+                    "iterationNumber": 72,
+                    "iterationFitnessScore": 0.1067198366539935
+                },
+                {
+                    "iterationNumber": 73,
+                    "iterationFitnessScore": 0.09236862666539776
+                },
+                {
+                    "iterationNumber": 74,
+                    "iterationFitnessScore": 0.07994730370244035
+                },
+                {
+                    "iterationNumber": 75,
+                    "iterationFitnessScore": 0.0691963451231496
+                },
+                {
+                    "iterationNumber": 76,
+                    "iterationFitnessScore": 0.05989112773863158
+                },
+                {
+                    "iterationNumber": 77,
+                    "iterationFitnessScore": 0.0518372346895108
+                },
+                {
+                    "iterationNumber": 78,
+                    "iterationFitnessScore": 0.044866393432798184
+                },
+                {
+                    "iterationNumber": 79,
+                    "iterationFitnessScore": 0.038832959970257944
+                },
+                {
+                    "iterationNumber": 80,
+                    "iterationFitnessScore": 0.033610875862138664
+                },
+                {
+                    "iterationNumber": 81,
+                    "iterationFitnessScore": 0.029091034448193567
+                },
+                {
+                    "iterationNumber": 82,
+                    "iterationFitnessScore": 0.025179001247607975
+                },
+                {
+                    "iterationNumber": 83,
+                    "iterationFitnessScore": 0.021793040909427353
+                },
+                {
+                    "iterationNumber": 84,
+                    "iterationFitnessScore": 0.018862409489935367
+                },
+                {
+                    "iterationNumber": 85,
+                    "iterationFitnessScore": 0.016325876376990296
+                },
+                {
+                    "iterationNumber": 86,
+                    "iterationFitnessScore": 0.014130444979417291
+                },
+                {
+                    "iterationNumber": 87,
+                    "iterationFitnessScore": 0.01223024545241279
+                },
+                {
+                    "iterationNumber": 88,
+                    "iterationFitnessScore": 0.010585576324322664
+                },
+                {
+                    "iterationNumber": 89,
+                    "iterationFitnessScore": 0.009162075001197508
+                },
+                {
+                    "iterationNumber": 90,
+                    "iterationFitnessScore": 0.007929999818213906
+                },
+                {
+                    "iterationNumber": 91,
+                    "iterationFitnessScore": 0.006863608637634321
+                },
+                {
+                    "iterationNumber": 92,
+                    "iterationFitnessScore": 0.005940621010155191
+                },
+                {
+                    "iterationNumber": 93,
+                    "iterationFitnessScore": 0.005141752662410109
+                },
+                {
+                    "iterationNumber": 94,
+                    "iterationFitnessScore": 0.004450312584527394
+                },
+                {
+                    "iterationNumber": 95,
+                    "iterationFitnessScore": 0.0038518542995647463
+                },
+                {
+                    "iterationNumber": 96,
+                    "iterationFitnessScore": 0.0033338740286826514
+                },
+                {
+                    "iterationNumber": 97,
+                    "iterationFitnessScore": 0.0028855494457255613
+                },
+                {
+                    "iterationNumber": 98,
+                    "iterationFitnessScore": 0.0024975135629276284
+                },
+                {
+                    "iterationNumber": 99,
+                    "iterationFitnessScore": 0.0021616590234651307
+                },
+                {
+                    "iterationNumber": 100,
+                    "iterationFitnessScore": 0.0018709687118778707
+                },
+                {
+                    "iterationNumber": 101,
+                    "iterationFitnessScore": 0.0016193691432493447
+                },
+                {
+                    "iterationNumber": 102,
+                    "iterationFitnessScore": 0.0014016035679592321
+                },
+                {
+                    "iterationNumber": 103,
+                    "iterationFitnessScore": 0.0012131221407456225
+                },
+                {
+                    "iterationNumber": 104,
+                    "iterationFitnessScore": 0.0010499868593442754
+                },
+                {
+                    "iterationNumber": 105,
+                    "iterationFitnessScore": 0.0009087892865577735
+                },
+                {
+                    "iterationNumber": 106,
+                    "iterationFitnessScore": 0.0007865793366956686
+                },
+                {
+                    "iterationNumber": 107,
+                    "iterationFitnessScore": 0.0006808036384980694
+                },
+                {
+                    "iterationNumber": 108,
+                    "iterationFitnessScore": 0.0005892521867397312
+                },
+                {
+                    "iterationNumber": 109,
+                    "iterationFitnessScore": 0.0005100121678896407
+                },
+                {
+                    "iterationNumber": 110,
+                    "iterationFitnessScore": 0.00044142799509097207
+                },
+                {
+                    "iterationNumber": 111,
+                    "iterationFitnessScore": 0.0003820667174595729
+                },
+                {
+                    "iterationNumber": 112,
+                    "iterationFitnessScore": 0.0003306880809864578
+                },
+                {
+                    "iterationNumber": 113,
+                    "iterationFitnessScore": 0.00028621861551726734
+                },
+                {
+                    "iterationNumber": 114,
+                    "iterationFitnessScore": 0.00024772920639971934
+                },
+                {
+                    "iterationNumber": 115,
+                    "iterationFitnessScore": 0.00021441568219636765
+                },
+                {
+                    "iterationNumber": 116,
+                    "iterationFitnessScore": 0.00018558201287559536
+                },
+                {
+                    "iterationNumber": 117,
+                    "iterationFitnessScore": 0.00016062576743531318
+                },
+                {
+                    "iterationNumber": 118,
+                    "iterationFitnessScore": 0.000139025527120878
+                },
+                {
+                    "iterationNumber": 119,
+                    "iterationFitnessScore": 0.00012032999125760912
+                },
+                {
+                    "iterationNumber": 120,
+                    "iterationFitnessScore": 0.00010414854808259074
+                },
+                {
+                    "iterationNumber": 121,
+                    "iterationFitnessScore": 9.014311356916855e-5
+                },
+                {
+                    "iterationNumber": 122,
+                    "iterationFitnessScore": 7.802106773010632e-5
+                },
+                {
+                    "iterationNumber": 123,
+                    "iterationFitnessScore": 6.752914081534274e-5
+                },
+                {
+                    "iterationNumber": 124,
+                    "iterationFitnessScore": 5.8448121666742206e-5
+                },
+                {
+                    "iterationNumber": 125,
+                    "iterationFitnessScore": 5.0588277669810624e-5
+                },
+                {
+                    "iterationNumber": 126,
+                    "iterationFitnessScore": 4.378539060997858e-5
+                },
+                {
+                    "iterationNumber": 127,
+                    "iterationFitnessScore": 3.789732560933784e-5
+                },
+                {
+                    "iterationNumber": 128,
+                    "iterationFitnessScore": 3.2801061457536935e-5
+                },
+                {
+                    "iterationNumber": 129,
+                    "iterationFitnessScore": 2.8390120290599422e-5
+                },
+                {
+                    "iterationNumber": 130,
+                    "iterationFitnessScore": 2.4572342915125536e-5
+                },
+                {
+                    "iterationNumber": 131,
+                    "iterationFitnessScore": 2.1267963297022426e-5
+                },
+                {
+                    "iterationNumber": 132,
+                    "iterationFitnessScore": 1.8407941984444005e-5
+                },
+                {
+                    "iterationNumber": 133,
+                    "iterationFitnessScore": 1.5932523644616945e-5
+                },
+                {
+                    "iterationNumber": 134,
+                    "iterationFitnessScore": 1.3789988576712974e-5
+                },
+                {
+                    "iterationNumber": 135,
+                    "iterationFitnessScore": 1.1935572115728455e-5
+                },
+                {
+                    "iterationNumber": 136,
+                    "iterationFitnessScore": 1.0330529350134628e-5
+                },
+                {
+                    "iterationNumber": 137,
+                    "iterationFitnessScore": 8.94132561214725e-6
+                },
+                {
+                    "iterationNumber": 138,
+                    "iterationFitnessScore": 7.738935827271837e-6
+                },
+                {
+                    "iterationNumber": 139,
+                    "iterationFitnessScore": 6.698238084212753e-6
+                },
+                {
+                    "iterationNumber": 140,
+                    "iterationFitnessScore": 5.7974887548091516e-6
+                },
+                {
+                    "iterationNumber": 141,
+                    "iterationFitnessScore": 5.017868197512551e-6
+                },
+                {
+                    "iterationNumber": 142,
+                    "iterationFitnessScore": 4.343087552644476e-6
+                },
+                {
+                    "iterationNumber": 143,
+                    "iterationFitnessScore": 3.759048414082649e-6
+                },
+                {
+                    "iterationNumber": 144,
+                    "iterationFitnessScore": 3.2535482667885303e-6
+                },
+                {
+                    "iterationNumber": 145,
+                    "iterationFitnessScore": 2.816025535788673e-6
+                },
+                {
+                    "iterationNumber": 146,
+                    "iterationFitnessScore": 2.4373389198376095e-6
+                },
+                {
+                    "iterationNumber": 147,
+                    "iterationFitnessScore": 2.1095763993103916e-6
+                },
+                {
+                    "iterationNumber": 148,
+                    "iterationFitnessScore": 1.8258899278660386e-6
+                },
+                {
+                    "iterationNumber": 149,
+                    "iterationFitnessScore": 1.5803523540424854e-6
+                },
+                {
+                    "iterationNumber": 150,
+                    "iterationFitnessScore": 1.3678335834003584e-6
+                },
+                {
+                    "iterationNumber": 151,
+                    "iterationFitnessScore": 1.1838933938320738e-6
+                },
+                {
+                    "iterationNumber": 152,
+                    "iterationFitnessScore": 1.0246886645924585e-6
+                },
+                {
+                    "iterationNumber": 153,
+                    "iterationFitnessScore": 8.868930807575779e-7
+                },
+                {
+                    "iterationNumber": 154,
+                    "iterationFitnessScore": 7.676276354716071e-7
+                },
+                {
+                    "iterationNumber": 155,
+                    "iterationFitnessScore": 6.644004779430632e-7
+                },
+                {
+                    "iterationNumber": 156,
+                    "iterationFitnessScore": 5.750548504155545e-7
+                },
+                {
+                    "iterationNumber": 157,
+                    "iterationFitnessScore": 4.97724026343635e-7
+                },
+                {
+                    "iterationNumber": 158,
+                    "iterationFitnessScore": 4.307923082827681e-7
+                },
+                {
+                    "iterationNumber": 159,
+                    "iterationFitnessScore": 3.728612706099651e-7
+                },
+                {
+                    "iterationNumber": 160,
+                    "iterationFitnessScore": 3.227205417735141e-7
+                },
+                {
+                    "iterationNumber": 161,
+                    "iterationFitnessScore": 2.793225156160989e-7
+                },
+                {
+                    "iterationNumber": 162,
+                    "iterationFitnessScore": 2.4176046340694803e-7
+                },
+                {
+                    "iterationNumber": 163,
+                    "iterationFitnessScore": 2.0924958927075248e-7
+                },
+                {
+                    "iterationNumber": 164,
+                    "iterationFitnessScore": 1.811106331984316e-7
+                },
+                {
+                    "iterationNumber": 165,
+                    "iterationFitnessScore": 1.5675567905222914e-7
+                },
+                {
+                    "iterationNumber": 166,
+                    "iterationFitnessScore": 1.3567587104730161e-7
+                },
+                {
+                    "iterationNumber": 167,
+                    "iterationFitnessScore": 1.1743078206634316e-7
+                },
+                {
+                    "iterationNumber": 168,
+                    "iterationFitnessScore": 1.0163921167607823e-7
+                },
+                {
+                    "iterationNumber": 169,
+                    "iterationFitnessScore": 8.79712215856516e-8
+                },
+                {
+                    "iterationNumber": 170,
+                    "iterationFitnessScore": 7.614124214122813e-8
+                },
+                {
+                    "iterationNumber": 171,
+                    "iterationFitnessScore": 6.590210582860368e-8
+                },
+                {
+                    "iterationNumber": 172,
+                    "iterationFitnessScore": 5.7039883123903165e-8
+                },
+                {
+                    "iterationNumber": 173,
+                    "iterationFitnessScore": 4.9369412796159635e-8
+                },
+                {
+                    "iterationNumber": 174,
+                    "iterationFitnessScore": 4.2730433274962626e-8
+                },
+                {
+                    "iterationNumber": 175,
+                    "iterationFitnessScore": 3.698423425461658e-8
+                },
+                {
+                    "iterationNumber": 176,
+                    "iterationFitnessScore": 3.2010758575711066e-8
+                },
+                {
+                    "iterationNumber": 177,
+                    "iterationFitnessScore": 2.7706093832794393e-8
+                },
+                {
+                    "iterationNumber": 178,
+                    "iterationFitnessScore": 2.398030129951571e-8
+                },
+                {
+                    "iterationNumber": 179,
+                    "iterationFitnessScore": 2.075553681027708e-8
+                },
+                {
+                    "iterationNumber": 180,
+                    "iterationFitnessScore": 1.7964424337381734e-8
+                },
+                {
+                    "iterationNumber": 181,
+                    "iterationFitnessScore": 1.554864828230892e-8
+                },
+                {
+                    "iterationNumber": 182,
+                    "iterationFitnessScore": 1.3457735069410148e-8
+                },
+                {
+                    "iterationNumber": 183,
+                    "iterationFitnessScore": 1.164799858547816e-8
+                },
+                {
+                    "iterationNumber": 184,
+                    "iterationFitnessScore": 1.0081627431921789e-8
+                },
+                {
+                    "iterationNumber": 185,
+                    "iterationFitnessScore": 8.725894919217624e-9
+                },
+                {
+                    "iterationNumber": 186,
+                    "iterationFitnessScore": 7.552475297801589e-9
+                },
+                {
+                    "iterationNumber": 187,
+                    "iterationFitnessScore": 6.5368519391954e-9
+                },
+                {
+                    "iterationNumber": 188,
+                    "iterationFitnessScore": 5.657805102308754e-9
+                },
+                {
+                    "iterationNumber": 189,
+                    "iterationFitnessScore": 4.8969685826555635e-9
+                },
+                {
+                    "iterationNumber": 190,
+                    "iterationFitnessScore": 4.238445981416029e-9
+                },
+                {
+                    "iterationNumber": 191,
+                    "iterationFitnessScore": 3.6684785769321534e-9
+                },
+                {
+                    "iterationNumber": 192,
+                    "iterationFitnessScore": 3.175157859370428e-9
+                },
+                {
+                    "iterationNumber": 193,
+                    "iterationFitnessScore": 2.74817672244737e-9
+                },
+                {
+                    "iterationNumber": 194,
+                    "iterationFitnessScore": 2.378614113787425e-9
+                },
+                {
+                    "iterationNumber": 195,
+                    "iterationFitnessScore": 2.0587486445450343e-9
+                },
+                {
+                    "iterationNumber": 196,
+                    "iterationFitnessScore": 1.7818972639774804e-9
+                },
+                {
+                    "iterationNumber": 197,
+                    "iterationFitnessScore": 1.5422756283451499e-9
+                },
+                {
+                    "iterationNumber": 198,
+                    "iterationFitnessScore": 1.334877246782443e-9
+                },
+                {
+                    "iterationNumber": 199,
+                    "iterationFitnessScore": 1.1553688790955205e-9
+                },
+                {
+                    "iterationNumber": 200,
+                    "iterationFitnessScore": 9.999999999999972e-10
+                }
+            ]
+        ]
+    }
+]

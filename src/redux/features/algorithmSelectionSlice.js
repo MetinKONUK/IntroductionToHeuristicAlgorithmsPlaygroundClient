@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { toast } from 'react-toastify'
+import { v4 as uuidv4 } from 'uuid'
 
 export const algorithmSelectionSlice = createSlice({
     name: 'algorithm-selection-slice',
@@ -9,6 +10,7 @@ export const algorithmSelectionSlice = createSlice({
     reducers: {
         addAlgorithm: (state, action) => {
             const algorithm = action.payload
+            algorithm.executionId = uuidv4()
             if (algorithm.customFile) {
                 // Store only file metadata in Redux
                 algorithm.customFile = {

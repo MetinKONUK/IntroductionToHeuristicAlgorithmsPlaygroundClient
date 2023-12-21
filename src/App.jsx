@@ -15,6 +15,7 @@ import SimulatedAnnealingComponent from './components/HeuristicAlgorithms/Simula
 import SidebarComponent from './components/SidebarComponent'
 import FloatingButton from './components/FloatingButton'
 import AlgorithmsReviewSlider from './components/AlgorithmsReviewSlider'
+import ExecutionResultsDisplayComponent from './components/ExecutionResultsDisplayComponent'
 import { useState } from 'react'
 
 function App() {
@@ -135,6 +136,10 @@ function App() {
                 />
 
                 <Route path='/run' element={<AlgorithmsReviewSlider />} />
+                <Route
+                    path='/results'
+                    element={<ExecutionResultsDisplayComponent />}
+                />
             </Routes>
         </>
     )
