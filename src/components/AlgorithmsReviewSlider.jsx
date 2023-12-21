@@ -7,6 +7,13 @@ import GreyWolfOptimizationReviewComponent from './HeuristicAlgorihmReviews/Grey
 import ParticleSwarmOptimizationReviewComponent from './HeuristicAlgorihmReviews/ParticleSwarmOptimizationReviewComponent'
 import HarmonySearchAlgorithmReviewComponent from './HeuristicAlgorihmReviews/HarmonySearchAlgorithmReviewComponent'
 import NothingIcon from '../assets/sliderIcons/nothing.png'
+import AfricanVulturesOptimizationReviewComponent from './HeuristicAlgorihmReviews/AfricanVulturesOptimizationReviewComponent'
+import ArithmeticOptimizationAlgorithmReviewComponent from './HeuristicAlgorihmReviews/ArithmeticOptimizationAlgorithmReviewComponent'
+import ArtificialGorillaTroopsOptimizationReviewComponent from './HeuristicAlgorihmReviews/ArtificialGorillaTroopsOptimizationReviewComponent'
+import EquilibriumOptimizationReviewComponent from './HeuristicAlgorihmReviews/EquilibriumOptimizationReviewComponent'
+import HenryGasSolubilityOptimizationReviewComponent from './HeuristicAlgorihmReviews/HenryGasSolubilityOptimizationReviewComponent'
+import MarinePredatorAlgorithmReviewComponent from './HeuristicAlgorihmReviews/MarinePredatorAlgorithmReviewComponent'
+import MountainGazelleOptimizationReviewComponent from './HeuristicAlgorihmReviews/MountainGazelleOptimizationReviewComponent'
 
 const AlgorithmsReviewSlider = () => {
     const algorithmsToExecute = useSelector(
@@ -53,17 +60,41 @@ const AlgorithmsReviewSlider = () => {
                         <Slider {...settings}>
                             {algorithmsToExecute.map((algorithm, index) => {
                                 switch (algorithm.algorithmCode) {
-                                    case 'GA':
+                                    case 'AVO':
                                         return (
-                                            <GeneticAlgorithmReviewComponent
+                                            <AfricanVulturesOptimizationReviewComponent
                                                 key={index}
                                                 data={algorithm}
                                                 index={index}
                                             />
                                         )
-                                    case 'SA':
+                                    case 'AOA':
                                         return (
-                                            <SimulatedAnnealingReviewComponent
+                                            <ArithmeticOptimizationAlgorithmReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'AGTO':
+                                        return (
+                                            <ArtificialGorillaTroopsOptimizationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'EO':
+                                        return (
+                                            <EquilibriumOptimizationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'GA':
+                                        return (
+                                            <GeneticAlgorithmReviewComponent
                                                 key={index}
                                                 data={algorithm}
                                                 index={index}
@@ -77,6 +108,38 @@ const AlgorithmsReviewSlider = () => {
                                                 index={index}
                                             />
                                         )
+                                    case 'HSA':
+                                        return (
+                                            <HarmonySearchAlgorithmReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'HGSO':
+                                        return (
+                                            <HenryGasSolubilityOptimizationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'MPA':
+                                        return (
+                                            <MarinePredatorAlgorithmReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'MGO':
+                                        return (
+                                            <MountainGazelleOptimizationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
                                     case 'PSO':
                                         return (
                                             <ParticleSwarmOptimizationReviewComponent
@@ -85,9 +148,9 @@ const AlgorithmsReviewSlider = () => {
                                                 index={index}
                                             />
                                         )
-                                    case 'HSA':
+                                    case 'SA':
                                         return (
-                                            <HarmonySearchAlgorithmReviewComponent
+                                            <SimulatedAnnealingReviewComponent
                                                 key={index}
                                                 data={algorithm}
                                                 index={index}
