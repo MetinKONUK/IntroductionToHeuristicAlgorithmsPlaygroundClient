@@ -13,12 +13,28 @@ import {
     Button,
 } from '@mui/material'
 
+import AfricanVulturesOptimizationDetails from './SelectedAlgorithmDetails/AfricanVulturesOptimizationDetails'
+import ArithmeticOptimizationAlgorithmDetails from './SelectedAlgorithmDetails/ArithetmeticOptimizationAlgorithmDetails'
+import ArtificialGorillaTroopsOptimizationDetails from './SelectedAlgorithmDetails/ArtificialGorillaTroopsOptimizationDetails'
+import EquilibriumOptimizationDetails from './SelectedAlgorithmDetails/EquilibriumOptimizationDetails'
+import GeneticAlgorithmDetails from './SelectedAlgorithmDetails/GeneticAlgorithmDetails'
+import GreyWolfOptimizationDetails from './SelectedAlgorithmDetails/GreyWolfOptimizationDetails'
+import HarmonySearchAlgorithmDetails from './SelectedAlgorithmDetails/HarmonySearchAlgorithmDetails'
+import HenryGasSolubilityOptimizationDetails from './SelectedAlgorithmDetails/HenryGasSolubilityOptimizationDetails'
+import MarinePredatorAlgorithmDetails from './SelectedAlgorithmDetails/MarinePredatorAlgorithmDetails'
+import MountainGazelleOptimizationDetails from './SelectedAlgorithmDetails/MountainGazelleOptimizationDetails'
+import ParticleSwarmOptimizationDetails from './SelectedAlgorithmDetails/ParticleSwarmOptimizationDetails'
+import SimulatedAnnealingDetails from './SelectedAlgorithmDetails/SimulatedAnnealingDetails'
+
 const ExecutionResultsDisplayComponent = () => {
     const [selectedExecution, setSelectedExecution] = useState(null)
     const [selectedLines, setSelectedLines] = useState([])
     const [chartWidth, setChartWidth] = useState(0)
     const [dialogOpen, setDialogOpen] = useState(false)
 
+    const selectedAlgorithms = useSelector(
+        state => state.algorithmSelection.algorithmsToExecute
+    )
     const executionResults = useSelector(
         state => state.executionResults.executionResults
     )
@@ -39,13 +55,17 @@ const ExecutionResultsDisplayComponent = () => {
     }, [executionResults])
 
     const transformedData = Object.entries(executionResults).map(
-        ([executionId, execution]) => ({
-            id: executionId,
-            data: execution.results.map(result => ({
-                x: result.iterationNumber,
-                y: result.iterationFitnessScore,
-            })),
-        })
+        ([index, execution]) => {
+            let { executionId } = execution
+            return {
+                id: index,
+                label: executionId.substring(0, 8), // Shortened label
+                data: execution.results.map(result => ({
+                    x: result.iterationNumber,
+                    y: result.iterationFitnessScore,
+                })),
+            }
+        }
     )
 
     const filteredData = transformedData.filter(line =>
@@ -61,10 +81,10 @@ const ExecutionResultsDisplayComponent = () => {
     }
 
     const handlePointClick = point => {
-        const executionData = executionResults[point.serieId]
+        const algorithmData = selectedAlgorithms[point.serieId]
         setSelectedExecution({
             executionId: point.serieId,
-            algorithmData: executionData.algorithmData,
+            algorithmData, // Fallback to executionData.algorithmData if necessary
         })
         setDialogOpen(true)
     }
@@ -84,10 +104,113 @@ const ExecutionResultsDisplayComponent = () => {
         </Paper>
     )
 
-    const colorScheme = ['#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231']
+    const colorScheme = [
+        '#76ff03',
+        '#ff3d00',
+        '#ff9100',
+        '#ffea00',
+        '#1de9b6',
+        '#3d5afe',
+        '#d500f9',
+        '#f50057',
+        '#009688',
+        '#673ab7',
+        '#880e4f',
+    ]
     const getColorForLine = lineId => {
         const index = Object.keys(executionResults).indexOf(lineId)
         return colorScheme[index % colorScheme.length]
+    }
+
+    const renderAlgorithmDetails = () => {
+        if (!selectedExecution || !selectedExecution.algorithmData) {
+            return (
+                <Typography variant='subtitle1'>
+                    No Details Available
+                </Typography>
+            )
+        }
+
+        switch (selectedExecution.algorithmData.algorithmCode) {
+            case 'GA':
+                return (
+                    <GeneticAlgorithmDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'AVO':
+                return (
+                    <AfricanVulturesOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'AOA':
+                return (
+                    <ArithmeticOptimizationAlgorithmDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'AGTO':
+                return (
+                    <ArtificialGorillaTroopsOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'EO':
+                return (
+                    <EquilibriumOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'GWO':
+                return (
+                    <GreyWolfOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'HSA':
+                return (
+                    <HarmonySearchAlgorithmDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'HGSO':
+                return (
+                    <HenryGasSolubilityOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'MPA':
+                return (
+                    <MarinePredatorAlgorithmDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'MGO':
+                return (
+                    <MountainGazelleOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'PSO':
+                return (
+                    <ParticleSwarmOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'SA':
+                return (
+                    <SimulatedAnnealingDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            default:
+                return (
+                    <Typography variant='subtitle1'>
+                        Algorithm details not available.
+                    </Typography>
+                )
+        }
     }
 
     return (
@@ -144,10 +267,10 @@ const ExecutionResultsDisplayComponent = () => {
                         onClick={handlePointClick}
                         legends={[
                             {
-                                anchor: 'top-right',
+                                anchor: 'top-left',
                                 direction: 'column',
-                                translateX: -180,
-                                translateY: 50,
+                                translateX: -70,
+                                translateY: 10,
                                 itemsSpacing: 0,
                                 itemDirection: 'left-to-right',
                                 itemWidth: 100,
@@ -173,7 +296,7 @@ const ExecutionResultsDisplayComponent = () => {
                                     )
                                     return {
                                         id: line.id,
-                                        label: line.id,
+                                        label: line.label,
                                         color: isActive
                                             ? getColorForLine(line.id)
                                             : 'grey',
@@ -185,21 +308,7 @@ const ExecutionResultsDisplayComponent = () => {
                 </Box>
             </Box>
             <Dialog open={dialogOpen} onClose={handleCloseDialog}>
-                <DialogTitle>Selected Algorithm Details</DialogTitle>
-                <DialogContent>
-                    {selectedExecution && (
-                        <>
-                            <DialogContentText>
-                                Execution ID: {selectedExecution.executionId}
-                            </DialogContentText>
-                            <DialogContentText>
-                                Algorithm Code:{' '}
-                                {selectedExecution.algorithmData.AlgorithmCode}
-                            </DialogContentText>
-                            {/* Additional details can be displayed here */}
-                        </>
-                    )}
-                </DialogContent>
+                <DialogContent>{renderAlgorithmDetails()}</DialogContent>
                 <DialogActions>
                     <Button onClick={handleCloseDialog}>Close</Button>
                 </DialogActions>

@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-
 export const executionResultsSlice = createSlice({
     name: 'executionResults',
     initialState: {
