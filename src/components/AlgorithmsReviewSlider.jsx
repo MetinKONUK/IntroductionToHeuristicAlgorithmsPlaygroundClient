@@ -2,19 +2,39 @@ import { useSelector, useDispatch } from 'react-redux'
 import { initializeWebSocket, closeWebSocket } from '../utils/webSocketManager'
 import Slider from 'react-slick'
 import { Box, Paper, Typography, Button } from '@mui/material'
-import GeneticAlgorithmReviewComponent from './HeuristicAlgorihmReviews/GeneticAlgorithmReviewComponent'
-import SimulatedAnnealingReviewComponent from './HeuristicAlgorihmReviews/SimulatedAnnealingReviewComponent'
-import GreyWolfOptimizationReviewComponent from './HeuristicAlgorihmReviews/GreyWolfOptimizationReviewComponent'
-import ParticleSwarmOptimizationReviewComponent from './HeuristicAlgorihmReviews/ParticleSwarmOptimizationReviewComponent'
-import HarmonySearchAlgorithmReviewComponent from './HeuristicAlgorihmReviews/HarmonySearchAlgorithmReviewComponent'
+import GeneticAlgorithmReviewComponent from './HeuristicAlgorithmReviews/GeneticAlgorithmReviewComponent'
+import SimulatedAnnealingReviewComponent from './HeuristicAlgorithmReviews/SimulatedAnnealingReviewComponent'
+import GreyWolfOptimizationReviewComponent from './HeuristicAlgorithmReviews/GreyWolfOptimizationReviewComponent'
+import ParticleSwarmOptimizationReviewComponent from './HeuristicAlgorithmReviews/ParticleSwarmOptimizationReviewComponent'
+import HarmonySearchAlgorithmReviewComponent from './HeuristicAlgorithmReviews/HarmonySearchAlgorithmReviewComponent'
 import NothingIcon from '../assets/sliderIcons/nothing.png'
-import AfricanVulturesOptimizationReviewComponent from './HeuristicAlgorihmReviews/AfricanVulturesOptimizationReviewComponent'
-import ArithmeticOptimizationAlgorithmReviewComponent from './HeuristicAlgorihmReviews/ArithmeticOptimizationAlgorithmReviewComponent'
-import ArtificialGorillaTroopsOptimizationReviewComponent from './HeuristicAlgorihmReviews/ArtificialGorillaTroopsOptimizationReviewComponent'
-import EquilibriumOptimizationReviewComponent from './HeuristicAlgorihmReviews/EquilibriumOptimizationReviewComponent'
-import HenryGasSolubilityOptimizationReviewComponent from './HeuristicAlgorihmReviews/HenryGasSolubilityOptimizationReviewComponent'
-import MarinePredatorAlgorithmReviewComponent from './HeuristicAlgorihmReviews/MarinePredatorAlgorithmReviewComponent'
-import MountainGazelleOptimizationReviewComponent from './HeuristicAlgorihmReviews/MountainGazelleOptimizationReviewComponent'
+import AfricanVulturesOptimizationReviewComponent from './HeuristicAlgorithmReviews/AfricanVulturesOptimizationReviewComponent'
+import ArithmeticOptimizationAlgorithmReviewComponent from './HeuristicAlgorithmReviews/ArithmeticOptimizationAlgorithmReviewComponent'
+import ArtificialGorillaTroopsOptimizationReviewComponent from './HeuristicAlgorithmReviews/ArtificialGorillaTroopsOptimizationReviewComponent'
+import EquilibriumOptimizationReviewComponent from './HeuristicAlgorithmReviews/EquilibriumOptimizationReviewComponent'
+import HenryGasSolubilityOptimizationReviewComponent from './HeuristicAlgorithmReviews/HenryGasSolubilityOptimizationReviewComponent'
+import MarinePredatorAlgorithmReviewComponent from './HeuristicAlgorithmReviews/MarinePredatorAlgorithmReviewComponent'
+import MountainGazelleOptimizationReviewComponent from './HeuristicAlgorithmReviews/MountainGazelleOptimizationReviewComponent'
+import BarnaclesMatingOptimizationReviewComponent from './HeuristicAlgorithmReviews/BarnaclesMatingOptimizationReviewComponent'
+import BiogeographyBasedOptimizationReviewComponent from './HeuristicAlgorithmReviews/BiogeographyBasedOptimizationReviewComponent'
+import BrownBearOptimizationReviewComponent from './HeuristicAlgorithmReviews/BrownBearOptimizationReviewComponent'
+import CoralReefsOptimizationReviewComponent from './HeuristicAlgorithmReviews/CoralReefsOptimizationReviewComponent'
+import DifferentialEvolutionReviewComponent from './HeuristicAlgorithmReviews/DifferentialEvolutionReviewComponent'
+import EarthwormOptimisationReviewComponent from './HeuristicAlgorithmReviews/EarthwormOptimisationReviewComponent'
+import EvolutionaryProgrammingReviewComponent from './HeuristicAlgorithmReviews/EvolutionaryProgrammingReviewComponent'
+import EvolutionStrategiesReviewComponent from './HeuristicAlgorithmReviews/EvolutionStrategiesReviewComponent'
+import FlowerPollinationAlgorithmReviewComponent from './HeuristicAlgorithmReviews/FlowerPollinationAlgorithmReviewComponent'
+import InvasiveWeedOptimizationReviewComponent from './HeuristicAlgorithmReviews/InvasiveWeedOptimizationReviewComponent'
+import MemeticAlgorithmReviewComponent from './HeuristicAlgorithmReviews/MemeticAlgorithmReviewComponent'
+import SatinBowerbirdOptimizerReviewComponent from './HeuristicAlgorithmReviews/SatinBowerbirdOptimizerReviewComponent'
+import SeagullOptimizationAlgorithmComponent from './HeuristicAlgorithmReviews/SeagullOptimizationAlgorithmComponent'
+import SlimeMouldAlgorithmComponent from './HeuristicAlgorithmReviews/SlimeMouldAlgorithmComponent'
+import SuccessHistoryAdaptationDEComponent from './HeuristicAlgorithmReviews/SuccessHistoryAdaptationDEComponent'
+import SymbioticOrganismsSearchComponent from './HeuristicAlgorithmReviews/SymbioticOrganismsSearchComponent'
+import TreePhysiologyOptimizationComponent from './HeuristicAlgorithmReviews/TreePhysiologyOptimizationComponent'
+import TunicateSwarmAlgorithmComponent from './HeuristicAlgorithmReviews/TunicateSwarmAlgorithmComponent'
+import VirusColonySearchComponent from './HeuristicAlgorithmReviews/VirusColonySearchComponent'
+import WildebeestHerdOptimizationComponent from './HeuristicAlgorithmReviews/WildebeestHerdOptimizationComponent'
 
 const AlgorithmsReviewSlider = () => {
     const dispatch = useDispatch()
@@ -158,6 +178,167 @@ const AlgorithmsReviewSlider = () => {
                                     case 'SA':
                                         return (
                                             <SimulatedAnnealingReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+
+                                    case 'BMO':
+                                        return (
+                                            <BarnaclesMatingOptimizationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'BBO':
+                                        return (
+                                            <BiogeographyBasedOptimizationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'BRBO':
+                                        return (
+                                            <BrownBearOptimizationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'CRO':
+                                        return (
+                                            <CoralReefsOptimizationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'DE':
+                                        return (
+                                            <DifferentialEvolutionReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'EWO':
+                                        return (
+                                            <EarthwormOptimisationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'EP':
+                                        return (
+                                            <EvolutionaryProgrammingReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'ES':
+                                        return (
+                                            <EvolutionStrategiesReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'FPA':
+                                        return (
+                                            <FlowerPollinationAlgorithmReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'IWO':
+                                        return (
+                                            <InvasiveWeedOptimizationReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'MA':
+                                        return (
+                                            <MemeticAlgorithmReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'SBBO':
+                                        return (
+                                            <SatinBowerbirdOptimizerReviewComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'SOS':
+                                        return (
+                                            <SeagullOptimizationAlgorithmComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'SMA':
+                                        return (
+                                            <SlimeMouldAlgorithmComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'SHADE':
+                                        return (
+                                            <SuccessHistoryAdaptationDEComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'SMOS':
+                                        return (
+                                            <SymbioticOrganismsSearchComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'TPO':
+                                        return (
+                                            <TreePhysiologyOptimizationComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'TSO':
+                                        return (
+                                            <TunicateSwarmAlgorithmComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'VCS':
+                                        return (
+                                            <VirusColonySearchComponent
+                                                key={index}
+                                                data={algorithm}
+                                                index={index}
+                                            />
+                                        )
+                                    case 'WHO':
+                                        return (
+                                            <WildebeestHerdOptimizationComponent
                                                 key={index}
                                                 data={algorithm}
                                                 index={index}

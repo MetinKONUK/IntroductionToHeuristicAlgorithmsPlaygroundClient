@@ -26,6 +26,27 @@ import MountainGazelleOptimizationDetails from './SelectedAlgorithmDetails/Mount
 import ParticleSwarmOptimizationDetails from './SelectedAlgorithmDetails/ParticleSwarmOptimizationDetails'
 import SimulatedAnnealingDetails from './SelectedAlgorithmDetails/SimulatedAnnealingDetails'
 
+import BarnaclesMatingOptimizationDetails from './SelectedAlgorithmDetails/BarnaclesMatingOptimizationDetails'
+import BiogeographyBasedOptimizationDetails from './SelectedAlgorithmDetails/BiogeographyBasedOptimizationDetails'
+import BrownBearOptimizationDetails from './SelectedAlgorithmDetails/BrownBearOptimizationDetails'
+import CoralReefsOptimizationDetails from './SelectedAlgorithmDetails/CoralReefsOptimizationDetails'
+import DifferentialEvolutionDetails from './SelectedAlgorithmDetails/DifferentialEvolutionDetails'
+import EarthwormOptimisationDetails from './SelectedAlgorithmDetails/EarthwormOptimisationDetails'
+import EvolutionaryProgrammingDetails from './SelectedAlgorithmDetails/EvolutionaryProgrammingDetails'
+import EvolutionStrategiesDetails from './SelectedAlgorithmDetails/EvolutionStrategiesDetails'
+import FlowerPollinationAlgorithmDetails from './SelectedAlgorithmDetails/FlowerPollinationAlgorithmDetails'
+import InvasiveWeedOptimizationDetails from './SelectedAlgorithmDetails/InvasiveWeedOptimizationDetails'
+import MemeticAlgorithmDetails from './SelectedAlgorithmDetails/MemeticAlgorithmDetails'
+import SatinBowerbirdOptimizerDetails from './SelectedAlgorithmDetails/SatinBowerbirdOptimizerDetails'
+import SeagullOptimizationDetails from './SelectedAlgorithmDetails/SeagullOptimizationDetails'
+import SlimeMouldAlgorithmDetails from './SelectedAlgorithmDetails/SlimeMouldAlgorithmDetails'
+import SuccessHistoryAdaptationDEDetails from './SelectedAlgorithmDetails/SuccessHistoryAdaptationDEDetails'
+import SymbioticOrganismsSearchDetails from './SelectedAlgorithmDetails/SymbioticOrganismsSearchDetails'
+import TreePhysiologyOptimizationDetails from './SelectedAlgorithmDetails/TreePhysiologyOptimizationDetails'
+import TunicateSwarmAlgorithmDetails from './SelectedAlgorithmDetails/TunicateSwarmAlgorithmDetails'
+import VirusColonySearchAlgorithmDetails from './SelectedAlgorithmDetails/VirusColonySearchAlgorithmDetails'
+import WildebeestHerdOptimizationDetails from './SelectedAlgorithmDetails/WildebeestHerdOptimizationDetails'
+
 const ExecutionResultsDisplayComponent = () => {
     const [selectedExecution, setSelectedExecution] = useState(null)
     const [selectedLines, setSelectedLines] = useState([])
@@ -201,6 +222,130 @@ const ExecutionResultsDisplayComponent = () => {
             case 'SA':
                 return (
                     <SimulatedAnnealingDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            
+
+
+                
+            case 'BMO':
+                return (
+                    <BarnaclesMatingOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'BBO':
+                return (
+                    <BiogeographyBasedOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'BRBO':
+                return (
+                    <BrownBearOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'CRO':
+                return (
+                    <CoralReefsOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'DE':
+                return (
+                    <DifferentialEvolutionDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'EWO':
+                return (
+                    <EarthwormOptimisationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'EP':
+                return (
+                    <EvolutionaryProgrammingDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'ES':
+                return (
+                    <EvolutionStrategiesDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'FPA':
+                return (
+                    <FlowerPollinationAlgorithmDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'IWO':
+                return (
+                    <InvasiveWeedOptimizationDetails
+                        selectedExecution={selectedExecution}   
+                    />
+                )
+            case 'MA':
+                return (
+                    <MemeticAlgorithmDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'SBBO':
+                return (
+                    <SatinBowerbirdOptimizerDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'SOS':
+                return (
+                    <SeagullOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'SMA':
+                return (
+                    <SlimeMouldAlgorithmDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'SHADE':
+                return (
+                    <SuccessHistoryAdaptationDEDetails
+                        selectedExecution={selectedExecution}
+                    />  
+                )
+            case 'SMOS':
+                return (
+                    <SymbioticOrganismsSearchDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'TPO':
+                return (
+                    <TreePhysiologyOptimizationDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'TSO':
+                return (
+                    <TunicateSwarmAlgorithmDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'VCS':
+                return (
+                    <VirusColonySearchAlgorithmDetails
+                        selectedExecution={selectedExecution}
+                    />
+                )
+            case 'WHO':
+                return (
+                    <WildebeestHerdOptimizationDetails
                         selectedExecution={selectedExecution}
                     />
                 )
