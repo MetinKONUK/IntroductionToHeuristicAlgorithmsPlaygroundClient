@@ -35,8 +35,11 @@ import TreePhysiologyOptimizationComponent from './HeuristicAlgorithmReviews/Tre
 import TunicateSwarmAlgorithmComponent from './HeuristicAlgorithmReviews/TunicateSwarmAlgorithmComponent'
 import VirusColonySearchComponent from './HeuristicAlgorithmReviews/VirusColonySearchComponent'
 import WildebeestHerdOptimizationComponent from './HeuristicAlgorithmReviews/WildebeestHerdOptimizationComponent'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const AlgorithmsReviewSlider = () => {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const algorithmsToExecute = useSelector(
         state => state.algorithmSelection.algorithmsToExecute
@@ -48,8 +51,8 @@ const AlgorithmsReviewSlider = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
     }
-
     const handleSendToServer = () => {
+        navigate('/results')
         initializeWebSocket(dispatch, algorithmsToExecute)
     }
 
@@ -60,6 +63,7 @@ const AlgorithmsReviewSlider = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
+                marginY: 20,
             }}
         >
             <Paper
@@ -280,7 +284,7 @@ const AlgorithmsReviewSlider = () => {
                                                 index={index}
                                             />
                                         )
-                                    case 'SOS':
+                                    case 'SOA':
                                         return (
                                             <SeagullOptimizationAlgorithmComponent
                                                 key={index}

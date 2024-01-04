@@ -30,6 +30,7 @@ import {
     Paper,
     Typography,
 } from '@mui/material'
+import { benchmarkFunctionsList } from '../../data/BenchmarkFunctionsList'
 
 const ArithmeticOptimizationAlgorithmComponent = () => {
     const { index } = useParams()
@@ -83,6 +84,7 @@ const ArithmeticOptimizationAlgorithmComponent = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
+                my: 10,
             }}
         >
             <Paper elevation={3} sx={{ padding: 3, margin: 2, width: '40%' }}>
@@ -121,16 +123,16 @@ const ArithmeticOptimizationAlgorithmComponent = () => {
                             value={parameters.benchmarkFunction}
                             onChange={handleInputChange}
                         >
-                            <MenuItem value='Ackley'>Ackley</MenuItem>
-                            <MenuItem value='Griewank'>Griewank</MenuItem>
-                            <MenuItem value='Schwefel'>Schwefel</MenuItem>
-                            <MenuItem value='Rastrigin'>Rastrigin</MenuItem>
-                            <MenuItem value='Sphere'>Sphere</MenuItem>
-                            <MenuItem value='Perm'>Perm</MenuItem>
-                            <MenuItem value='Zakharov'>Zakharov</MenuItem>
-                            <MenuItem value='Rosenbrock'>Rosenbrock</MenuItem>
-                            <MenuItem value='Dixon-Price'>Dixon-Price</MenuItem>
-                            <MenuItem value='Custom'>Custom</MenuItem>
+                            {benchmarkFunctionsList.map(
+                                (benchmarkFunction, index) => (
+                                    <MenuItem
+                                        key={index}
+                                        value={benchmarkFunction}
+                                    >
+                                        {benchmarkFunction}
+                                    </MenuItem>
+                                )
+                            )}
                         </Select>
                     </FormControl>
                     <TextField

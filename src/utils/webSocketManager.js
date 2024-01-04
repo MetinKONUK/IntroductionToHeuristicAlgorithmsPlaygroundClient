@@ -2,6 +2,7 @@ import {
     connectWebSocket,
     disconnectWebSocket,
     receiveData,
+    resetExecutionResults,
 } from '../redux/features/executionResultsSlice'
 
 let socket
@@ -10,6 +11,7 @@ export const initializeWebSocket = (dispatch, algorithmsToExecute) => {
     socket = new WebSocket('ws://localhost:5000') // Websocket name here
     socket.onopen = () => {
         dispatch(connectWebSocket())
+        dispatch(resetExecutionResults())
         socket.send(JSON.stringify(algorithmsToExecute))
     }
     socket.onmessage = event => {

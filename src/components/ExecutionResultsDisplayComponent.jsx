@@ -46,6 +46,7 @@ import TreePhysiologyOptimizationDetails from './SelectedAlgorithmDetails/TreePh
 import TunicateSwarmAlgorithmDetails from './SelectedAlgorithmDetails/TunicateSwarmAlgorithmDetails'
 import VirusColonySearchAlgorithmDetails from './SelectedAlgorithmDetails/VirusColonySearchAlgorithmDetails'
 import WildebeestHerdOptimizationDetails from './SelectedAlgorithmDetails/WildebeestHerdOptimizationDetails'
+import NoDataIcon from '../assets/executionResultsIcons/no-data.png'
 
 const ExecutionResultsDisplayComponent = () => {
     const [selectedExecution, setSelectedExecution] = useState(null)
@@ -225,10 +226,7 @@ const ExecutionResultsDisplayComponent = () => {
                         selectedExecution={selectedExecution}
                     />
                 )
-            
 
-
-                
             case 'BMO':
                 return (
                     <BarnaclesMatingOptimizationDetails
@@ -286,7 +284,7 @@ const ExecutionResultsDisplayComponent = () => {
             case 'IWO':
                 return (
                     <InvasiveWeedOptimizationDetails
-                        selectedExecution={selectedExecution}   
+                        selectedExecution={selectedExecution}
                     />
                 )
             case 'MA':
@@ -301,7 +299,7 @@ const ExecutionResultsDisplayComponent = () => {
                         selectedExecution={selectedExecution}
                     />
                 )
-            case 'SOS':
+            case 'SOA':
                 return (
                     <SeagullOptimizationDetails
                         selectedExecution={selectedExecution}
@@ -317,7 +315,7 @@ const ExecutionResultsDisplayComponent = () => {
                 return (
                     <SuccessHistoryAdaptationDEDetails
                         selectedExecution={selectedExecution}
-                    />  
+                    />
                 )
             case 'SMOS':
                 return (
@@ -361,96 +359,114 @@ const ExecutionResultsDisplayComponent = () => {
     return (
         <Box sx={{ height: '100vh' }}>
             <Box sx={{ flexGrow: 1, height: '100%', overflowX: 'auto' }}>
-                <Box sx={{ width: `${chartWidth}px`, height: '95%' }}>
-                    <ResponsiveLine
-                        data={filteredData}
-                        tooltip={CustomTooltip}
-                        margin={{
-                            top: 40,
-                            right: 80,
-                            bottom: 50,
-                            left: 80,
-                        }}
-                        xScale={{
-                            type: 'linear',
-                            min: 'auto',
-                            max: 'auto',
-                        }}
-                        yScale={{
-                            type: 'linear',
-                            min: 'auto',
-                            max: 'auto',
-                            stacked: false,
-                            reverse: false,
-                        }}
-                        axisTop={null}
-                        axisRight={null}
-                        axisBottom={{
-                            orient: 'bottom',
-                            tickSize: 5,
-                            tickPadding: 5,
-                            tickRotation: -20,
-                            legend: 'Iteration Number',
-                            legendOffset: 36,
-                            legendPosition: 'middle',
-                        }}
-                        axisLeft={{
-                            orient: 'left',
-                            tickSize: 1,
-                            tickPadding: 5,
-                            tickRotation: -10,
-                            legend: 'Fitness Score',
-                            legendOffset: -50,
-                            legendPosition: 'middle',
-                        }}
-                        colors={line => getColorForLine(line.id)}
-                        pointSize={8}
-                        pointColor={{ theme: 'background' }}
-                        pointBorderWidth={2}
-                        pointBorderColor={{ from: 'serieColor' }}
-                        useMesh={true}
-                        onClick={handlePointClick}
-                        legends={[
-                            {
-                                anchor: 'top-left',
-                                direction: 'column',
-                                translateX: -70,
-                                translateY: 10,
-                                itemsSpacing: 0,
-                                itemDirection: 'left-to-right',
-                                itemWidth: 100,
-                                itemHeight: 20,
-                                itemOpacity: 0.75,
-                                symbolSize: 12,
-                                symbolShape: 'circle',
-                                symbolBorderColor: 'rgba(0, 0, 0, .5)',
-                                effects: [
-                                    {
-                                        on: 'hover',
-                                        style: {
-                                            itemBackground:
-                                                'rgba(0, 0, 0, .03)',
-                                            itemOpacity: 1,
+                {executionResults.length !== 0 ? (
+                    <Box sx={{ width: `${chartWidth}px`, height: '95%' }}>
+                        <ResponsiveLine
+                            data={filteredData}
+                            tooltip={CustomTooltip}
+                            margin={{
+                                top: 40,
+                                right: 80,
+                                bottom: 50,
+                                left: 80,
+                            }}
+                            xScale={{
+                                type: 'linear',
+                                min: 'auto',
+                                max: 'auto',
+                            }}
+                            yScale={{
+                                type: 'linear',
+                                min: 'auto',
+                                max: 'auto',
+                                stacked: false,
+                                reverse: false,
+                            }}
+                            axisTop={null}
+                            axisRight={null}
+                            axisBottom={{
+                                orient: 'bottom',
+                                tickSize: 5,
+                                tickPadding: 5,
+                                tickRotation: -20,
+                                legend: 'Iteration Number',
+                                legendOffset: 36,
+                                legendPosition: 'middle',
+                            }}
+                            axisLeft={{
+                                orient: 'left',
+                                tickSize: 1,
+                                tickPadding: 5,
+                                tickRotation: -10,
+                                legend: 'Fitness Score',
+                                legendOffset: -50,
+                                legendPosition: 'middle',
+                            }}
+                            colors={line => getColorForLine(line.id)}
+                            pointSize={8}
+                            pointColor={{ theme: 'background' }}
+                            pointBorderWidth={2}
+                            pointBorderColor={{ from: 'serieColor' }}
+                            useMesh={true}
+                            onClick={handlePointClick}
+                            legends={[
+                                {
+                                    anchor: 'top-left',
+                                    direction: 'column',
+                                    translateX: -70,
+                                    translateY: 10,
+                                    itemsSpacing: 0,
+                                    itemDirection: 'left-to-right',
+                                    itemWidth: 100,
+                                    itemHeight: 20,
+                                    itemOpacity: 0.75,
+                                    symbolSize: 12,
+                                    symbolShape: 'circle',
+                                    symbolBorderColor: 'rgba(0, 0, 0, .5)',
+                                    effects: [
+                                        {
+                                            on: 'hover',
+                                            style: {
+                                                itemBackground:
+                                                    'rgba(0, 0, 0, .03)',
+                                                itemOpacity: 1,
+                                            },
                                         },
-                                    },
-                                ],
-                                onClick: handleLegendClick,
-                                data: transformedData.map(line => {
-                                    const isActive = selectedLines.includes(
-                                        line.id
-                                    )
-                                    return {
-                                        id: line.id,
-                                        label: line.label,
-                                        color: isActive
-                                            ? getColorForLine(line.id)
-                                            : 'grey',
-                                    }
-                                }),
-                            },
-                        ]}
-                    />
-                </Box>
+                                    ],
+                                    onClick: handleLegendClick,
+                                    data: transformedData.map(line => {
+                                        const isActive = selectedLines.includes(
+                                            line.id
+                                        )
+                                        return {
+                                            id: line.id,
+                                            label: line.label,
+                                            color: isActive
+                                                ? getColorForLine(line.id)
+                                                : 'grey',
+                                        }
+                                    }),
+                                },
+                            ]}
+                        />
+                    </Box>
+                ) : (
+                    <Box sx={{ textAlign: 'center' }}>
+                        <img
+                            src={NoDataIcon}
+                            alt='There is no execution results to display!'
+                            style={{
+                                width: '30%',
+                                height: 'auto',
+                                marginBottom: '2rem',
+                                marginTop: '10rem',
+                            }}
+                        />
+                        <Typography variant='h6'>
+                            There is no execution results to display!
+                        </Typography>
+                    </Box>
+                )}
             </Box>
             <Dialog open={dialogOpen} onClose={handleCloseDialog}>
                 <DialogContent>{renderAlgorithmDetails()}</DialogContent>

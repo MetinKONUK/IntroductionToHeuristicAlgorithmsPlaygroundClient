@@ -30,13 +30,13 @@ const WildebeestHerdOptimizationReviewComponent = ({ data, index }) => {
                         <ListItemText primary='n_vars' secondary={data.nVars} />
                     </ListItem>
                     <ListItem>
-                        <ListItemText primary='lb' secondary={data.lb} />
+                        <ListItemText
+                            primary='Lower Bound, Upper Bound'
+                            secondary={`${data.lb}, ${data.ub}`}
+                        />
                     </ListItem>
                     <ListItem>
-                        <ListItemText primary='ub' secondary={data.ub} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='name' secondary={data.name} />
+                        <ListItemText primary='Name' secondary={data.name} />
                     </ListItem>
                     <ListItem>
                         <ListItemText
@@ -47,7 +47,7 @@ const WildebeestHerdOptimizationReviewComponent = ({ data, index }) => {
                     <ListItem>
                         <ListItemText
                             primary='Benchmark Function'
-                            secondary={data.objFunc}
+                            secondary={data.benchmarkFunction}
                         />
                     </ListItem>
                     <ListItem>
@@ -61,51 +61,27 @@ const WildebeestHerdOptimizationReviewComponent = ({ data, index }) => {
                     </ListItem>
                     <ListItem>
                         <ListItemText
-                            primary='n_explore_step'
-                            secondary={data.nExploreStep}
+                            primary='N Explore Step, N Exploit Step'
+                            secondary={`${data.nExploreStep}, ${data.nExploitStep}`}
                         />
                     </ListItem>
                     <ListItem>
                         <ListItemText
-                            primary='n_exploit_step'
-                            secondary={data.nExploitStep}
-                        />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='eta' secondary={data.eta} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='p_hi' secondary={data.pHi} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText
-                            primary='local_alpha'
-                            secondary={data.localAlpha}
+                            primary='ETA, P-HI'
+                            secondary={`${data.eta}, ${data.pHi}`}
                         />
                     </ListItem>
                     <ListItem>
                         <ListItemText
-                            primary='local_beta'
-                            secondary={data.localBeta}
+                            primary='Local Alpha, Local Beta, Global Alpha, Global Beta'
+                            secondary={`${data.localAlpha}, ${data.localBeta}, ${data.globalAlpha}, ${data.globalBeta}`}
                         />
                     </ListItem>
                     <ListItem>
                         <ListItemText
-                            primary='global_alpha'
-                            secondary={data.globalAlpha}
+                            primary='Delta W, Delta C'
+                            secondary={`${data.deltaW}, ${data.deltaC}`}
                         />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText
-                            primary='global_beta'
-                            secondary={data.globalBeta}
-                        />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='delta_w' secondary={data.deltaW} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='delta_c' secondary={data.deltaC} />
                     </ListItem>
                 </List>
             </CardContent>

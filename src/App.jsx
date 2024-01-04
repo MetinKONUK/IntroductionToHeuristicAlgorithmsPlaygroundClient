@@ -12,7 +12,6 @@ import MountainGazelleOptimizationComponent from './components/HeuristicAlgorith
 import ParticleSwarmOptimizationComponent from './components/HeuristicAlgorithms/ParticleSwarmOptimizationComponent'
 import SimulatedAnnealingComponent from './components/HeuristicAlgorithms/SimulatedAnnealingComponent'
 
-
 import BarnaclesMatingOptimizationComponent from './components/HeuristicAlgorithms/BarnaclesMatingOptimizationComponent'
 import BiogeographyBasedOptimizationComponent from './components/HeuristicAlgorithms/BiogeographyBasedOptimizationComponent'
 import BrownBearOptimizationComponent from './components/HeuristicAlgorithms/BrownBearOptimizationComponent'
@@ -34,13 +33,12 @@ import TunicateSwarmAlgorithmComponent from './components/HeuristicAlgorithms/Tu
 import VirusColonySearchComponent from './components/HeuristicAlgorithms/VirusColonySearchComponent'
 import WildebeestHerdOptimizationComponent from './components/HeuristicAlgorithms/WildebeestHerdOptimizationComponent'
 
-
-
 import SidebarComponent from './components/SidebarComponent'
 import FloatingButton from './components/FloatingButton'
 import AlgorithmsReviewSlider from './components/AlgorithmsReviewSlider'
 import ExecutionResultsDisplayComponent from './components/ExecutionResultsDisplayComponent'
 import { useState } from 'react'
+import { Box } from '@mui/material'
 
 function App() {
     const [isSidebarOpen, setSidebarOpen] = useState(false)
@@ -49,7 +47,7 @@ function App() {
     }
 
     return (
-        <>
+        <Box sx={{ height: '100vh', overflowY: 'auto' }}>
             {!isSidebarOpen && <FloatingButton onClick={toggleSidebar} />}
 
             <SidebarComponent
@@ -159,47 +157,64 @@ function App() {
                     element={<SimulatedAnnealingComponent />}
                 />
 
-
-
-
-
-                <Route path='/bmo' element={<BarnaclesMatingOptimizationComponent />} />
+                <Route
+                    path='/bmo'
+                    element={<BarnaclesMatingOptimizationComponent />}
+                />
                 <Route
                     path='/bmo/edit/:index'
-                    element={<BarnaclesMatingOptimizationComponent/>}
+                    element={<BarnaclesMatingOptimizationComponent />}
                 />
 
-                <Route path='/bbo' element={<BiogeographyBasedOptimizationComponent />} />
+                <Route
+                    path='/bbo'
+                    element={<BiogeographyBasedOptimizationComponent />}
+                />
                 <Route
                     path='/bbo/edit/:index'
                     element={<BiogeographyBasedOptimizationComponent />}
                 />
 
-                <Route path='/brbo' element={<BrownBearOptimizationComponent />} />
+                <Route
+                    path='/brbo'
+                    element={<BrownBearOptimizationComponent />}
+                />
                 <Route
                     path='/brbo/edit/:index'
                     element={<BrownBearOptimizationComponent />}
                 />
 
-                <Route path='/cro' element={<CoralReefsOptimizationComponent />} />
+                <Route
+                    path='/cro'
+                    element={<CoralReefsOptimizationComponent />}
+                />
                 <Route
                     path='/cro/edit/:index'
                     element={<CoralReefsOptimizationComponent />}
                 />
 
-                <Route path='/de' element={<DifferentialEvolutionComponent />} />
+                <Route
+                    path='/de'
+                    element={<DifferentialEvolutionComponent />}
+                />
                 <Route
                     path='/de/edit/:index'
                     element={<DifferentialEvolutionComponent />}
                 />
 
-                <Route path='/ewo' element={<EarthwormOptimisationComponent />} />
+                <Route
+                    path='/ewo'
+                    element={<EarthwormOptimisationComponent />}
+                />
                 <Route
                     path='/ewo/edit/:index'
                     element={<EarthwormOptimisationComponent />}
                 />
 
-                <Route path='/ep' element={<EvolutionaryProgrammingComponent />} />
+                <Route
+                    path='/ep'
+                    element={<EvolutionaryProgrammingComponent />}
+                />
                 <Route
                     path='/ep/edit/:index'
                     element={<EvolutionaryProgrammingComponent />}
@@ -217,7 +232,10 @@ function App() {
                     element={<FlowerPollinationComponent />}
                 />
 
-                <Route path='/ıwo' element={<InvasiveWeedOptimizationComponent />} />
+                <Route
+                    path='/ıwo'
+                    element={<InvasiveWeedOptimizationComponent />}
+                />
                 <Route
                     path='/ıwo/edit/:index'
                     element={<InvasiveWeedOptimizationComponent />}
@@ -229,7 +247,10 @@ function App() {
                     element={<MemeticAlgorithmComponent />}
                 />
 
-                <Route path='/sbbo' element={<SatinBowerbirdOptimizerComponent />} />
+                <Route
+                    path='/sbbo'
+                    element={<SatinBowerbirdOptimizerComponent />}
+                />
                 <Route
                     path='/sbbo/edit/:index'
                     element={<SatinBowerbirdOptimizerComponent />}
@@ -247,25 +268,37 @@ function App() {
                     element={<SlimeMouldAlgorithmComponent />}
                 />
 
-                <Route path='/shade' element={<SuccessHistoryAdaptationDEComponent />} />
+                <Route
+                    path='/shade'
+                    element={<SuccessHistoryAdaptationDEComponent />}
+                />
                 <Route
                     path='/shade/edit/:index'
                     element={<SuccessHistoryAdaptationDEComponent />}
                 />
 
-                <Route path='/smos' element={<SymbioticOrganismsSearchComponent />} />
+                <Route
+                    path='/smos'
+                    element={<SymbioticOrganismsSearchComponent />}
+                />
                 <Route
                     path='/smos/edit/:index'
                     element={<SymbioticOrganismsSearchComponent />}
                 />
 
-                <Route path='/tpo' element={<TreePhysiologyOptimizationComponent />} />
+                <Route
+                    path='/tpo'
+                    element={<TreePhysiologyOptimizationComponent />}
+                />
                 <Route
                     path='/tpo/edit/:index'
                     element={<TreePhysiologyOptimizationComponent />}
                 />
 
-                <Route path='/tso' element={<TunicateSwarmAlgorithmComponent />} />
+                <Route
+                    path='/tso'
+                    element={<TunicateSwarmAlgorithmComponent />}
+                />
                 <Route
                     path='/tso/edit/:index'
                     element={<TunicateSwarmAlgorithmComponent />}
@@ -277,7 +310,10 @@ function App() {
                     element={<VirusColonySearchComponent />}
                 />
 
-                <Route path='/who' element={<WildebeestHerdOptimizationComponent />} />
+                <Route
+                    path='/who'
+                    element={<WildebeestHerdOptimizationComponent />}
+                />
                 <Route
                     path='/who/edit/:index'
                     element={<WildebeestHerdOptimizationComponent />}
@@ -289,9 +325,8 @@ function App() {
                     element={<ExecutionResultsDisplayComponent />}
                 />
             </Routes>
-        </>
+        </Box>
     )
 }
 
 export default App
-
