@@ -63,7 +63,7 @@ const AlgorithmsReviewSlider = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
-                marginY: 20,
+                marginY: 5,
             }}
         >
             <Paper

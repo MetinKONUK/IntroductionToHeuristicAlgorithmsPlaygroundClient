@@ -39,6 +39,7 @@ import AlgorithmsReviewSlider from './components/AlgorithmsReviewSlider'
 import ExecutionResultsDisplayComponent from './components/ExecutionResultsDisplayComponent'
 import { useState } from 'react'
 import { Box } from '@mui/material'
+import ExecutionResultsDisplayCompactComponent from './components/ExecutionResultsDisplayCompactComponent'
 
 function App() {
     const [isSidebarOpen, setSidebarOpen] = useState(false)
@@ -323,6 +324,10 @@ function App() {
                 <Route
                     path='/results'
                     element={<ExecutionResultsDisplayComponent />}
+                />
+                <Route
+                    path='/results-compact'
+                    element={<ExecutionResultsDisplayCompactComponent />}
                 />
             </Routes>
         </Box>
