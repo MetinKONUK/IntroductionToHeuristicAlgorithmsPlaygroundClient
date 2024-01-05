@@ -47,7 +47,7 @@ import TunicateSwarmAlgorithmDetails from './SelectedAlgorithmDetails/TunicateSw
 import VirusColonySearchAlgorithmDetails from './SelectedAlgorithmDetails/VirusColonySearchAlgorithmDetails'
 import WildebeestHerdOptimizationDetails from './SelectedAlgorithmDetails/WildebeestHerdOptimizationDetails'
 import NoDataIcon from '../assets/executionResultsIcons/no-data.png'
-
+import { colorScheme } from '../data/ColorsSchemeList'
 const ExecutionResultsDisplayComponent = () => {
     const [selectedExecution, setSelectedExecution] = useState(null)
     const [selectedLines, setSelectedLines] = useState([])
@@ -72,7 +72,7 @@ const ExecutionResultsDisplayComponent = () => {
                 getComputedStyle(document.documentElement).fontSize
             )
             setChartWidth(maxIterations * 3 * remInPixels)
-            setSelectedLines(Object.keys(executionResults))
+            // setSelectedLines(Object.keys(executionResults))
         }
     }, [executionResults])
 
@@ -126,19 +126,19 @@ const ExecutionResultsDisplayComponent = () => {
         </Paper>
     )
 
-    const colorScheme = [
-        '#76ff03',
-        '#ff3d00',
-        '#ff9100',
-        '#ffea00',
-        '#1de9b6',
-        '#3d5afe',
-        '#d500f9',
-        '#f50057',
-        '#009688',
-        '#673ab7',
-        '#880e4f',
-    ]
+    // const colorScheme = [
+    //     '#76ff03',
+    //     '#ff3d00',
+    //     '#ff9100',
+    //     '#ffea00',
+    //     '#1de9b6',
+    //     '#3d5afe',
+    //     '#d500f9',
+    //     '#f50057',
+    //     '#009688',
+    //     '#673ab7',
+    //     '#880e4f',
+    // ]
     const getColorForLine = lineId => {
         const index = Object.keys(executionResults).indexOf(lineId)
         return colorScheme[index % colorScheme.length]

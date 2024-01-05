@@ -34,7 +34,7 @@ const CoralReefsOptimizationComponent = () => {
         ub: '',
         name: '',
         minmax: '',
-        benchmarkFunction: '',
+        selectedBenchmarkFunction: '',
         epoch: '',
         popSize: '',
         po: '',
@@ -57,11 +57,29 @@ const CoralReefsOptimizationComponent = () => {
     }, [index, algorithmsToExecute, isEditMode])
 
     const handleInputChange = event => {
-        const { name, value } = event.target
-        setParameters(prevParams => ({
-            ...prevParams,
-            [name]: value,
-        }))
+        const { name, value, files } = event.target
+
+        if (name === 'customFile' && files.length > 0) {
+            const file = files[0]
+            const reader = new FileReader()
+
+            reader.onload = e => {
+                const fileContent = e.target.result
+                // Do something with fileContent here
+                setParameters(prevParams => ({
+                    ...prevParams,
+                    customFile: file,
+                    customFileContent: fileContent,
+                }))
+            }
+
+            reader.readAsText(file) // Read the file as text
+        } else {
+            setParameters(prevParams => ({
+                ...prevParams,
+                [name]: value,
+            }))
+        }
     }
 
     const handleConfirm = () => {
@@ -79,7 +97,7 @@ const CoralReefsOptimizationComponent = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
-                my: 10,
+                my: 50,
             }}
         >
             <Paper elevation={3} sx={{ padding: 3, margin: 2, width: '40%' }}>
@@ -90,7 +108,7 @@ const CoralReefsOptimizationComponent = () => {
                 </Box>
                 <FormGroup>
                     <TextField
-                        label='n_vars'
+                        label='Dimension'
                         name='nVars'
                         type='number'
                         variant='outlined'
@@ -99,7 +117,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='lb'
+                        label='Lower Bound'
                         name='lb'
                         type='number'
                         variant='outlined'
@@ -108,7 +126,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='ub'
+                        label='Upper Bound'
                         name='ub'
                         type='number'
                         variant='outlined'
@@ -117,7 +135,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='name'
+                        label='Name'
                         name='name'
                         variant='outlined'
                         margin='normal'
@@ -134,26 +152,6 @@ const CoralReefsOptimizationComponent = () => {
                         >
                             <MenuItem value='Min'>Min</MenuItem>
                             <MenuItem value='Max'>Max</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <FormControl variant='outlined' margin='normal' fullWidth>
-                        <InputLabel>Benchmark Function</InputLabel>
-                        <Select
-                            label='Benchmark Function'
-                            name='benchmarkFunction'
-                            value={parameters.benchmarkFunction}
-                            onChange={handleInputChange}
-                        >
-                            {benchmarkFunctionsList.map(
-                                (benchmarkFunction, index) => (
-                                    <MenuItem
-                                        key={index}
-                                        value={benchmarkFunction}
-                                    >
-                                        {benchmarkFunction}
-                                    </MenuItem>
-                                )
-                            )}
                         </Select>
                     </FormControl>
                     <TextField
@@ -175,7 +173,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='po'
+                        label='PO'
                         name='po'
                         type='number'
                         variant='outlined'
@@ -184,7 +182,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='Fb'
+                        label='FB'
                         name='Fb'
                         type='number'
                         variant='outlined'
@@ -193,7 +191,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='Fa'
+                        label='FA'
                         name='Fa'
                         type='number'
                         variant='outlined'
@@ -202,7 +200,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='Fd'
+                        label='FD'
                         name='Fd'
                         type='number'
                         variant='outlined'
@@ -211,7 +209,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='Pd'
+                        label='PD'
                         name='Pd'
                         type='number'
                         variant='outlined'
@@ -229,7 +227,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='gamma_min'
+                        label='Gamma Minimum'
                         name='gamma_min'
                         type='number'
                         variant='outlined'
@@ -238,7 +236,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='gamma_max'
+                        label='Gamma Maximum'
                         name='gamma_max'
                         type='number'
                         variant='outlined'
@@ -247,7 +245,7 @@ const CoralReefsOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='n_trials'
+                        label='N Trials'
                         name='nTrials'
                         type='number'
                         variant='outlined'
@@ -255,6 +253,36 @@ const CoralReefsOptimizationComponent = () => {
                         value={parameters.nTrials}
                         onChange={handleInputChange}
                     />
+                    <FormControl variant='outlined' margin='normal' fullWidth>
+                        <InputLabel>Benchmark Function</InputLabel>
+                        <Select
+                            label='Benchmark Function'
+                            name='selectedBenchmarkFunction'
+                            value={parameters.selectedBenchmarkFunction}
+                            onChange={handleInputChange}
+                        >
+                            {benchmarkFunctionsList.map(
+                                (benchmarkFunction, index) => (
+                                    <MenuItem
+                                        key={index}
+                                        value={benchmarkFunction}
+                                    >
+                                        {benchmarkFunction}
+                                    </MenuItem>
+                                )
+                            )}
+                        </Select>
+                    </FormControl>
+                    {parameters.selectedBenchmarkFunction === 'Custom' && (
+                        <TextField
+                            type='file'
+                            variant='outlined'
+                            margin='normal'
+                            InputLabelProps={{ shrink: true }}
+                            name='customFile' // Add this line
+                            onChange={handleInputChange}
+                        />
+                    )}
                     <Button
                         variant='contained'
                         color='primary'

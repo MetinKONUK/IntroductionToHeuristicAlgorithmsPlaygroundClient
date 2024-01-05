@@ -37,6 +37,8 @@ const GreyWolfOptimizationComponent = () => {
     const [parameters, setParameters] = useState({
         algorithmCode: 'GWO',
         populationSize: '',
+        lb: '',
+        ub: '',
         numberOfGenerations: '',
         decreaseFrom: '',
         selectedBenchmarkFunction: '',
@@ -108,6 +110,24 @@ const GreyWolfOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
+                        label='Lower Bound'
+                        name='lb'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.lb}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
+                        label='Upper Bound'
+                        name='ub'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.ub}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
                         label='Number of Generations'
                         name='numberOfGenerations'
                         type='number'
@@ -126,7 +146,7 @@ const GreyWolfOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <FormControl variant='outlined' margin='normal'>
-                        <InputLabel>Function Type</InputLabel>
+                        <InputLabel>Benchmark Function</InputLabel>
                         <Select
                             label='Function Type'
                             name='selectedBenchmarkFunction'

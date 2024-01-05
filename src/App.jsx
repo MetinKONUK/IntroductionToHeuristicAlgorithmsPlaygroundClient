@@ -40,7 +40,7 @@ import ExecutionResultsDisplayComponent from './components/ExecutionResultsDispl
 import { useState } from 'react'
 import { Box } from '@mui/material'
 import ExecutionResultsDisplayCompactComponent from './components/ExecutionResultsDisplayCompactComponent'
-
+import SpinnerComponent from './Spinner'
 function App() {
     const [isSidebarOpen, setSidebarOpen] = useState(false)
     const toggleSidebar = () => {
@@ -329,6 +329,7 @@ function App() {
                     path='/results-compact'
                     element={<ExecutionResultsDisplayCompactComponent />}
                 />
+                <Route path='*' element={<SpinnerComponent />} />
             </Routes>
         </Box>
     )

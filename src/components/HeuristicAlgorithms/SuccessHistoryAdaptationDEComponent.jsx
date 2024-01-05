@@ -34,7 +34,7 @@ const SuccessHistoryAdaptationDEComponent = () => {
         ub: '',
         name: '',
         minmax: '',
-        benchmarkFunction: '',
+        selectedBenchmarkFunction: '',
         epoch: '',
         popSize: '',
         miuF: '',
@@ -50,11 +50,29 @@ const SuccessHistoryAdaptationDEComponent = () => {
     }, [index, algorithmsToExecute, isEditMode])
 
     const handleInputChange = event => {
-        const { name, value } = event.target
-        setParameters(prevParams => ({
-            ...prevParams,
-            [name]: value,
-        }))
+        const { name, value, files } = event.target
+
+        if (name === 'customFile' && files.length > 0) {
+            const file = files[0]
+            const reader = new FileReader()
+
+            reader.onload = e => {
+                const fileContent = e.target.result
+                // Do something with fileContent here
+                setParameters(prevParams => ({
+                    ...prevParams,
+                    customFile: file,
+                    customFileContent: fileContent,
+                }))
+            }
+
+            reader.readAsText(file) // Read the file as text
+        } else {
+            setParameters(prevParams => ({
+                ...prevParams,
+                [name]: value,
+            }))
+        }
     }
 
     const handleConfirm = () => {
@@ -84,7 +102,7 @@ const SuccessHistoryAdaptationDEComponent = () => {
                 </Box>
                 <FormGroup>
                     <TextField
-                        label='n_vars'
+                        label='Dimension'
                         name='nVars'
                         type='number'
                         variant='outlined'
@@ -93,7 +111,7 @@ const SuccessHistoryAdaptationDEComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='lb'
+                        label='Lower Bound'
                         name='lb'
                         type='number'
                         variant='outlined'
@@ -102,7 +120,7 @@ const SuccessHistoryAdaptationDEComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='ub'
+                        label='Upper Bound'
                         name='ub'
                         type='number'
                         variant='outlined'
@@ -111,7 +129,7 @@ const SuccessHistoryAdaptationDEComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='name'
+                        label='Name'
                         name='name'
                         variant='outlined'
                         margin='normal'
@@ -128,26 +146,6 @@ const SuccessHistoryAdaptationDEComponent = () => {
                         >
                             <MenuItem value='Min'>Min</MenuItem>
                             <MenuItem value='Max'>Max</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <FormControl variant='outlined' margin='normal' fullWidth>
-                        <InputLabel>Benchmark Function</InputLabel>
-                        <Select
-                            label='Benchmark Function'
-                            name='benchmarkFunction'
-                            value={parameters.benchmarkFunction}
-                            onChange={handleInputChange}
-                        >
-                            {benchmarkFunctionsList.map(
-                                (benchmarkFunction, index) => (
-                                    <MenuItem
-                                        key={index}
-                                        value={benchmarkFunction}
-                                    >
-                                        {benchmarkFunction}
-                                    </MenuItem>
-                                )
-                            )}
                         </Select>
                     </FormControl>
                     <TextField
@@ -169,7 +167,7 @@ const SuccessHistoryAdaptationDEComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='miu_f'
+                        label='MIU-F'
                         name='miuF'
                         type='number'
                         variant='outlined'
@@ -178,7 +176,7 @@ const SuccessHistoryAdaptationDEComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='miu_cr'
+                        label='MIU-CR'
                         name='miuCR'
                         type='number'
                         variant='outlined'
@@ -186,6 +184,36 @@ const SuccessHistoryAdaptationDEComponent = () => {
                         value={parameters.miuCR}
                         onChange={handleInputChange}
                     />
+                    <FormControl variant='outlined' margin='normal' fullWidth>
+                        <InputLabel>Benchmark Function</InputLabel>
+                        <Select
+                            label='Benchmark Function'
+                            name='selectedBenchmarkFunction'
+                            value={parameters.selectedBenchmarkFunction}
+                            onChange={handleInputChange}
+                        >
+                            {benchmarkFunctionsList.map(
+                                (benchmarkFunction, index) => (
+                                    <MenuItem
+                                        key={index}
+                                        value={benchmarkFunction}
+                                    >
+                                        {benchmarkFunction}
+                                    </MenuItem>
+                                )
+                            )}
+                        </Select>
+                    </FormControl>
+                    {parameters.selectedBenchmarkFunction === 'Custom' && (
+                        <TextField
+                            type='file'
+                            variant='outlined'
+                            margin='normal'
+                            InputLabelProps={{ shrink: true }}
+                            name='customFile' // Add this line
+                            onChange={handleInputChange}
+                        />
+                    )}
                     <Button
                         variant='contained'
                         color='primary'

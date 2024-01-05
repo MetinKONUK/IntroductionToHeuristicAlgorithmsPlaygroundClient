@@ -34,6 +34,8 @@ const ParticleSwarmOptimizationComponent = () => {
     const dispatch = useDispatch()
     const [parameters, setParameters] = useState({
         algorithmCode: 'PSO',
+        lb: '',
+        ub: '',
         populationSize: '',
         numberOfGenerations: '',
         selectedBenchmarkFunction: '',
@@ -86,7 +88,7 @@ const ParticleSwarmOptimizationComponent = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
-                my: 10,
+                my: 0,
             }}
         >
             <Paper elevation={3} sx={{ padding: 3, margin: 2, width: '40%' }}>
@@ -106,6 +108,24 @@ const ParticleSwarmOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
+                        label='Lower Bound'
+                        name='lb'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.lb}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
+                        label='Upper Bound'
+                        name='ub'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.ub}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
                         label='Number of Generations'
                         name='numberOfGenerations'
                         type='number'
@@ -115,9 +135,9 @@ const ParticleSwarmOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <FormControl variant='outlined' margin='normal'>
-                        <InputLabel>Function Type</InputLabel>
+                        <InputLabel>Benchmark Function</InputLabel>
                         <Select
-                            label='Function Type'
+                            label='Benchmark Function'
                             name='selectedBenchmarkFunction'
                             value={parameters.selectedBenchmarkFunction}
                             onChange={handleInputChange}

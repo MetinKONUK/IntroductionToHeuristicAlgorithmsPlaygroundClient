@@ -12,6 +12,7 @@ import {
 } from '@mui/material'
 
 import NoDataIcon from '../assets/executionResultsIcons/no-data.png'
+import { colorScheme } from '../data/ColorsSchemeList'
 
 const ExecutionResultsDisplayCompactComponent = () => {
     // const [selectedExecution, setSelectedExecution] = useState(null)
@@ -35,6 +36,10 @@ const ExecutionResultsDisplayCompactComponent = () => {
             )
             const newChartWidth = Math.min(maxIterations * 2, 100)
             setChartWidth(`${newChartWidth}vw`)
+
+            // Set all execution results' IDs as selected
+            // const allExecutionIds = Object.keys(executionResults)
+            // setSelectedLines(allExecutionIds)
         }
     }, [executionResults])
 
@@ -85,19 +90,19 @@ const ExecutionResultsDisplayCompactComponent = () => {
         </Paper>
     )
 
-    const colorScheme = [
-        '#76ff03',
-        '#ff3d00',
-        '#ff9100',
-        '#ffea00',
-        '#1de9b6',
-        '#3d5afe',
-        '#d500f9',
-        '#f50057',
-        '#009688',
-        '#673ab7',
-        '#880e4f',
-    ]
+    // const colorScheme = [
+    //     '#76ff03',
+    //     '#ff3d00',
+    //     '#ff9100',
+    //     '#ffea00',
+    //     '#1de9b6',
+    //     '#3d5afe',
+    //     '#d500f9',
+    //     '#f50057',
+    //     '#009688',
+    //     '#673ab7',
+    //     '#880e4f',
+    // ]
 
     const getColorForLine = lineId => {
         const index = Object.keys(executionResults).indexOf(lineId)

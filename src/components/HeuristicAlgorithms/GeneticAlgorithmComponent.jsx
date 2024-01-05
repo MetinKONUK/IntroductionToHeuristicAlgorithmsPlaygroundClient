@@ -47,6 +47,8 @@ const GeneticAlgorithmComponent = () => {
     const [parameters, setParameters] = useState({
         algorithmCode: 'GA',
         populationSize: '',
+        lb: '',
+        ub: '',
         numberOfGenerations: '',
         mutationProbability: '',
         crossoverType: '',
@@ -122,6 +124,24 @@ const GeneticAlgorithmComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
+                        label='Lower Bound'
+                        name='lb'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.lb}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
+                        label='Upper Bound'
+                        name='ub'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.ub}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
                         label='Number of Generations'
                         name='numberOfGenerations'
                         type='number'
@@ -177,9 +197,9 @@ const GeneticAlgorithmComponent = () => {
                         </Select>
                     </FormControl>
                     <FormControl variant='outlined' margin='normal'>
-                        <InputLabel>Function Type</InputLabel>
+                        <InputLabel>Benchmark Function</InputLabel>
                         <Select
-                            label='Function Type'
+                            label='selectedBenchmarkFunction'
                             name='selectedBenchmarkFunction'
                             value={parameters.selectedBenchmarkFunction}
                             onChange={handleInputChange}
