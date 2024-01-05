@@ -17,6 +17,7 @@ import {
     Paper,
     Typography,
 } from '@mui/material'
+import { benchmarkFunctionsList } from '../../data/BenchmarkFunctionsList'
 
 const WildebeestHerdOptimizationComponent = () => {
     const { index } = useParams()
@@ -33,7 +34,7 @@ const WildebeestHerdOptimizationComponent = () => {
         ub: '',
         name: '',
         minmax: '',
-        benchmarkFunction: '',
+        selectedBenchmarkFunction: '',
         epoch: '',
         popSize: '',
         nExploreStep: '',
@@ -57,11 +58,29 @@ const WildebeestHerdOptimizationComponent = () => {
     }, [index, algorithmsToExecute, isEditMode])
 
     const handleInputChange = event => {
-        const { name, value } = event.target
-        setParameters(prevParams => ({
-            ...prevParams,
-            [name]: value,
-        }))
+        const { name, value, files } = event.target
+
+        if (name === 'customFile' && files.length > 0) {
+            const file = files[0]
+            const reader = new FileReader()
+
+            reader.onload = e => {
+                const fileContent = e.target.result
+                // Do something with fileContent here
+                setParameters(prevParams => ({
+                    ...prevParams,
+                    customFile: file,
+                    customFileContent: fileContent,
+                }))
+            }
+
+            reader.readAsText(file) // Read the file as text
+        } else {
+            setParameters(prevParams => ({
+                ...prevParams,
+                [name]: value,
+            }))
+        }
     }
 
     const handleConfirm = () => {
@@ -79,6 +98,7 @@ const WildebeestHerdOptimizationComponent = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
+                my: 50,
             }}
         >
             <Paper elevation={3} sx={{ padding: 3, margin: 2, width: '40%' }}>
@@ -89,7 +109,7 @@ const WildebeestHerdOptimizationComponent = () => {
                 </Box>
                 <FormGroup>
                     <TextField
-                        label='n_vars'
+                        label='Dimension'
                         name='nVars'
                         type='number'
                         variant='outlined'
@@ -98,7 +118,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='lb'
+                        label='Lower Bound'
                         name='lb'
                         type='number'
                         variant='outlined'
@@ -107,7 +127,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='ub'
+                        label='Upper Bound'
                         name='ub'
                         type='number'
                         variant='outlined'
@@ -116,7 +136,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='name'
+                        label='Name'
                         name='name'
                         variant='outlined'
                         margin='normal'
@@ -133,26 +153,6 @@ const WildebeestHerdOptimizationComponent = () => {
                         >
                             <MenuItem value='Min'>Min</MenuItem>
                             <MenuItem value='Max'>Max</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <FormControl variant='outlined' margin='normal' fullWidth>
-                        <InputLabel>Benchmark Function</InputLabel>
-                        <Select
-                            label='Benchmark Function'
-                            name='benchmarkFunction'
-                            value={parameters.benchmarkFunction}
-                            onChange={handleInputChange}
-                        >
-                            <MenuItem value='Ackley'>Ackley</MenuItem>
-                            <MenuItem value='Griewank'>Griewank</MenuItem>
-                            <MenuItem value='Schwefel'>Schwefel</MenuItem>
-                            <MenuItem value='Rastrigin'>Rastrigin</MenuItem>
-                            <MenuItem value='Sphere'>Sphere</MenuItem>
-                            <MenuItem value='Perm'>Perm</MenuItem>
-                            <MenuItem value='Zakharov'>Zakharov</MenuItem>
-                            <MenuItem value='Rosenbrock'>Rosenbrock</MenuItem>
-                            <MenuItem value='Dixon-Price'>Dixon-Price</MenuItem>
-                            <MenuItem value='Custom'>Custom</MenuItem>
                         </Select>
                     </FormControl>
                     <TextField
@@ -174,7 +174,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='n_explore_step'
+                        label='N Explore Step'
                         name='nExploreStep'
                         type='number'
                         variant='outlined'
@@ -183,7 +183,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='n_exploit_step'
+                        label='N Exploit Step'
                         name='nExploitStep'
                         type='number'
                         variant='outlined'
@@ -192,7 +192,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='eta'
+                        label='ETA'
                         name='eta'
                         type='number'
                         variant='outlined'
@@ -201,7 +201,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='p_hi'
+                        label='P-HI'
                         name='pHi'
                         type='number'
                         variant='outlined'
@@ -210,7 +210,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='local_alpha'
+                        label='Local Alpha'
                         name='localAlpha'
                         type='number'
                         variant='outlined'
@@ -219,7 +219,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='local_beta'
+                        label='Local Beta'
                         name='localBeta'
                         type='number'
                         variant='outlined'
@@ -228,7 +228,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='global_alpha'
+                        label='Global Alpha'
                         name='globalAlpha'
                         type='number'
                         variant='outlined'
@@ -237,7 +237,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='global_beta'
+                        label='Global Beta'
                         name='globalBeta'
                         type='number'
                         variant='outlined'
@@ -246,7 +246,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='delta_w'
+                        label='Delta-W'
                         name='deltaW'
                         type='number'
                         variant='outlined'
@@ -255,7 +255,7 @@ const WildebeestHerdOptimizationComponent = () => {
                         onChange={handleInputChange}
                     />
                     <TextField
-                        label='delta_c'
+                        label='Delta-C'
                         name='deltaC'
                         type='number'
                         variant='outlined'
@@ -263,6 +263,36 @@ const WildebeestHerdOptimizationComponent = () => {
                         value={parameters.deltaC}
                         onChange={handleInputChange}
                     />
+                    <FormControl variant='outlined' margin='normal' fullWidth>
+                        <InputLabel>Benchmark Function</InputLabel>
+                        <Select
+                            label='Benchmark Function'
+                            name='selectedBenchmarkFunction'
+                            value={parameters.selectedBenchmarkFunction}
+                            onChange={handleInputChange}
+                        >
+                            {benchmarkFunctionsList.map(
+                                (benchmarkFunction, index) => (
+                                    <MenuItem
+                                        key={index}
+                                        value={benchmarkFunction}
+                                    >
+                                        {benchmarkFunction}
+                                    </MenuItem>
+                                )
+                            )}
+                        </Select>
+                    </FormControl>
+                    {parameters.selectedBenchmarkFunction === 'Custom' && (
+                        <TextField
+                            type='file'
+                            variant='outlined'
+                            margin='normal'
+                            InputLabelProps={{ shrink: true }}
+                            name='customFile' // Add this line
+                            onChange={handleInputChange}
+                        />
+                    )}
                     <Button
                         variant='contained'
                         color='primary'

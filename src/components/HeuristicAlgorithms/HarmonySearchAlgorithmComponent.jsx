@@ -25,6 +25,7 @@ import {
     Paper,
     Typography,
 } from '@mui/material'
+import { benchmarkFunctionsList } from '../../data/BenchmarkFunctionsList'
 
 const HarmonySearchAlgorithmComponent = () => {
     const { index } = useParams()
@@ -35,6 +36,8 @@ const HarmonySearchAlgorithmComponent = () => {
     const dispatch = useDispatch()
     const [parameters, setParameters] = useState({
         algorithmCode: 'HSA',
+        lb: '',
+        ub: '',
         HMS: '',
         BW: '',
         HMCR: '',
@@ -89,6 +92,7 @@ const HarmonySearchAlgorithmComponent = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
+                my: 5,
             }}
         >
             <Paper elevation={3} sx={{ padding: 3, margin: 2, width: '40%' }}>
@@ -98,6 +102,24 @@ const HarmonySearchAlgorithmComponent = () => {
                     </Typography>
                 </Box>
                 <FormGroup>
+                    <TextField
+                        label='Lower Bound'
+                        name='lb'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.lb}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
+                        label='Upper Bound'
+                        name='ub'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.ub}
+                        onChange={handleInputChange}
+                    />
                     <TextField
                         label='HMS'
                         name='HMS'
@@ -137,21 +159,21 @@ const HarmonySearchAlgorithmComponent = () => {
                     <FormControl variant='outlined' margin='normal'>
                         <InputLabel>Function Type</InputLabel>
                         <Select
-                            label='Function Type'
+                            label='Benchmark Function'
                             name='selectedBenchmarkFunction'
                             value={parameters.selectedBenchmarkFunction}
                             onChange={handleInputChange}
                         >
-                            <MenuItem value='Ackley'>Ackley</MenuItem>
-                            <MenuItem value='Griewank'>Griewank</MenuItem>
-                            <MenuItem value='Schwefel'>Schwefel</MenuItem>
-                            <MenuItem value='Rastrigin'>Rastrigin</MenuItem>
-                            <MenuItem value='Sphere'>Sphere</MenuItem>
-                            <MenuItem value='Perm'>Perm</MenuItem>
-                            <MenuItem value='Zakharov'>Zakharov</MenuItem>
-                            <MenuItem value='Rosenbrock'>Rosenbrock</MenuItem>
-                            <MenuItem value='Dixon-Price'>Dixon-Price</MenuItem>
-                            <MenuItem value='Custom'>Custom</MenuItem>
+                            {benchmarkFunctionsList.map(
+                                (benchmarkFunction, index) => (
+                                    <MenuItem
+                                        key={index}
+                                        value={benchmarkFunction}
+                                    >
+                                        {benchmarkFunction}
+                                    </MenuItem>
+                                )
+                            )}
                         </Select>
                     </FormControl>
                     {parameters.selectedBenchmarkFunction === 'Custom' && (

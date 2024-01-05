@@ -24,6 +24,7 @@ import {
     Paper,
     Typography,
 } from '@mui/material'
+import { benchmarkFunctionsList } from '../../data/BenchmarkFunctionsList'
 
 const SimulatedAnnealingComponent = () => {
     const { index } = useParams()
@@ -34,6 +35,8 @@ const SimulatedAnnealingComponent = () => {
     const dispatch = useDispatch()
     const [parameters, setParameters] = useState({
         algorithmCode: 'SA',
+        lb: '',
+        ub: '',
         initialTemperature: '',
         coolDownFactor: '',
         temperatureDecreaseType: '',
@@ -88,6 +91,7 @@ const SimulatedAnnealingComponent = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
+                my: 0,
             }}
         >
             <Paper elevation={3} sx={{ padding: 3, margin: 2, width: '40%' }}>
@@ -97,6 +101,24 @@ const SimulatedAnnealingComponent = () => {
                     </Typography>
                 </Box>
                 <FormGroup>
+                    <TextField
+                        label='Lower Bound'
+                        name='lb'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.lb}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
+                        label='Upper Bound'
+                        name='ub'
+                        type='number'
+                        variant='outlined'
+                        margin='normal'
+                        value={parameters.ub}
+                        onChange={handleInputChange}
+                    />
                     <TextField
                         label='Initial Temperature'
                         name='initialTemperature'
@@ -128,23 +150,23 @@ const SimulatedAnnealingComponent = () => {
                         </Select>
                     </FormControl>
                     <FormControl variant='outlined' margin='normal' fullWidth>
-                        <InputLabel>Function Type</InputLabel>
+                        <InputLabel>Benchmark Function</InputLabel>
                         <Select
-                            label='Function Type'
+                            label='Benchmark Function'
                             name='selectedBenchmarkFunction'
                             value={parameters.selectedBenchmarkFunction}
                             onChange={handleInputChange}
                         >
-                            <MenuItem value='Ackley'>Ackley</MenuItem>
-                            <MenuItem value='Griewank'>Griewank</MenuItem>
-                            <MenuItem value='Schwefel'>Schwefel</MenuItem>
-                            <MenuItem value='Rastrigin'>Rastrigin</MenuItem>
-                            <MenuItem value='Sphere'>Sphere</MenuItem>
-                            <MenuItem value='Perm'>Perm</MenuItem>
-                            <MenuItem value='Zakharov'>Zakharov</MenuItem>
-                            <MenuItem value='Rosenbrock'>Rosenbrock</MenuItem>
-                            <MenuItem value='Dixon-Price'>Dixon-Price</MenuItem>
-                            <MenuItem value='Custom'>Custom</MenuItem>
+                            {benchmarkFunctionsList.map(
+                                (benchmarkFunction, index) => (
+                                    <MenuItem
+                                        key={index}
+                                        value={benchmarkFunction}
+                                    >
+                                        {benchmarkFunction}
+                                    </MenuItem>
+                                )
+                            )}
                         </Select>
                     </FormControl>
                     {parameters.selectedBenchmarkFunction === 'Custom' && (

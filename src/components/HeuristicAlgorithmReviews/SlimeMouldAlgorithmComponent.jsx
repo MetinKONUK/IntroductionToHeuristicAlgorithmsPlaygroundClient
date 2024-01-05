@@ -75,7 +75,7 @@ const SlimeMouldAlgorithmReviewComponent = ({ data, index }) => {
                 </Button>
                 <Button
                     component={Link}
-                    to={`/slime-mould/edit/${index}`}
+                    to={`/sma/edit/${index}`}
                     sx={{ width: '45%', marginX: '5%', borderRadius: 0 }}
                     variant='contained'
                     color='info'

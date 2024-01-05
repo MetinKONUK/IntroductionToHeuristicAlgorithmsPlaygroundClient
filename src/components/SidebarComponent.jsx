@@ -26,7 +26,7 @@ import GorillaIcon from '../assets/sidebarIcons/gorilla.png'
 import OrkaIcon from '../assets/sidebarIcons/orka.png'
 import VultureIcon from '../assets/sidebarIcons/vulture.png'
 import ChartIcon from '../assets/sidebarIcons/chart.png'
-
+import CompactGraphIcon from '../assets/sidebarIcons/compact-graph.png'
 import BarnacleIcon from '../assets/sidebarIcons/goose-barnacle.png'
 import BiogeographyIcon from '../assets/sidebarIcons/world.png'
 import BrownBearIcon from '../assets/sidebarIcons/brown-bear.png'
@@ -188,11 +188,6 @@ const SidebarComponent = ({ open, toggleSidebar }) => {
                 />
             ),
         },
-
-
-
-
-
 
         {
             primaryText: 'Barnacles Mating Optimization',
@@ -392,10 +387,7 @@ const SidebarComponent = ({ open, toggleSidebar }) => {
                 'Configure & add simulated annealing algorithm to execution list.',
             to: '/tpo',
             image: (
-                <img
-                    src={TreeIcon}
-                    style={{ width: '24px', height: '24px' }}
-                />
+                <img src={TreeIcon} style={{ width: '24px', height: '24px' }} />
             ),
         },
         {
@@ -428,10 +420,7 @@ const SidebarComponent = ({ open, toggleSidebar }) => {
                 'Configure & add simulated annealing algorithm to execution list.',
             to: '/who',
             image: (
-                <img
-                    src={WildIcon}
-                    style={{ width: '24px', height: '24px' }}
-                />
+                <img src={WildIcon} style={{ width: '24px', height: '24px' }} />
             ),
         },
     ]
@@ -457,6 +446,19 @@ const SidebarComponent = ({ open, toggleSidebar }) => {
             image: (
                 <img
                     src={ChartIcon}
+                    style={{ width: '24px', height: '24px' }}
+                />
+            ),
+        },
+        {
+            primaryText:
+                'Display & Inspect Execution Results of Selected Algorithms',
+            secondaryText:
+                'Display the execution results data in non detailed charts',
+            to: '/results-compact',
+            image: (
+                <img
+                    src={CompactGraphIcon}
                     style={{ width: '24px', height: '24px' }}
                 />
             ),

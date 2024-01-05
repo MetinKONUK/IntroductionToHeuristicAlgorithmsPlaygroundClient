@@ -6,6 +6,9 @@ export const executionResultsSlice = createSlice({
         isConnected: false,
     },
     reducers: {
+        resetExecutionResults: state => {
+            state.executionResults = []
+        },
         connectWebSocket: state => {
             state.isConnected = true
         },
@@ -40,6 +43,10 @@ export const executionResultsSlice = createSlice({
     },
 })
 
-export const { connectWebSocket, disconnectWebSocket, receiveData } =
-    executionResultsSlice.actions
+export const {
+    connectWebSocket,
+    disconnectWebSocket,
+    receiveData,
+    resetExecutionResults,
+} = executionResultsSlice.actions
 export default executionResultsSlice.reducer

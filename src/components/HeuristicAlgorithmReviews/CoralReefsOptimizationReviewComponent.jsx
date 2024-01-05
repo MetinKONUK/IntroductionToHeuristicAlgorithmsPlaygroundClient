@@ -27,16 +27,19 @@ const CoralReefsOptimizationReviewComponent = ({ data, index }) => {
                 </Typography>
                 <List>
                     <ListItem>
-                        <ListItemText primary='n_vars' secondary={data.nVars} />
+                        <ListItemText
+                            primary='Dimension'
+                            secondary={data.nVars}
+                        />
                     </ListItem>
                     <ListItem>
-                        <ListItemText primary='lb' secondary={data.lb} />
+                        <ListItemText
+                            primary='Lower Bound, Upper Bound'
+                            secondary={`${data.lb}, ${data.ub}`}
+                        />
                     </ListItem>
                     <ListItem>
-                        <ListItemText primary='ub' secondary={data.ub} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='name' secondary={data.name} />
+                        <ListItemText primary='Name' secondary={data.name} />
                     </ListItem>
                     <ListItem>
                         <ListItemText
@@ -60,22 +63,10 @@ const CoralReefsOptimizationReviewComponent = ({ data, index }) => {
                         />
                     </ListItem>
                     <ListItem>
-                        <ListItemText primary='po' secondary={data.po} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='Fb' secondary={data.Fb} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='Fa' secondary={data.Fa} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='Fd' secondary={data.Fd} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='Pd' secondary={data.Pd} />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText primary='GCR' secondary={data.GCR} />
+                        <ListItemText
+                            primary='PO, FB, FA, FD, PD, GCR'
+                            secondary={`${data.po}, ${data.Fb}, ${data.Fa}, ${data.Fd}, ${data.Pd}, ${data.GCR}`}
+                        />
                     </ListItem>
                     <ListItem>
                         <ListItemText
